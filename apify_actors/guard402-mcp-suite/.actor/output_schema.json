@@ -1,0 +1,20 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Guard402 Autonomous MCP Suite Output",
+  "description": "Structured security audit findings, sanitized content, on-chain honeypot telemetry, and AutoPatch Vault links",
+  "type": "object",
+  "properties": {
+    "resultsDatasetUrl": {
+      "type": "string",
+      "title": "Audit & Intelligence Dataset",
+      "description": "Default dataset containing structured security scores, vulnerability findings,AutoPatch remediation diffs, and cryptographic receipts",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=json"
+    },
+    "latestReportUrl": {
+      "type": "string",
+      "title": "Latest Report (Key-Value Store OUTPUT)",
+      "description": "Direct JSON link to the primary execution report",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
+    }
+  }
+}

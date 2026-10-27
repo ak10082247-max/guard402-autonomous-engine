@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    {
+      "name": "Kurox x402 Security Fleet",
+      "email": "security@kurox402.dev"
+    }
+  ]
+}

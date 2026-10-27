@@ -1,0 +1,47 @@
+{
+  "name": "rugshield-402",
+  "version": "1.0.0",
+  "description": "Low-latency token honeypot detection, buy/sell tax simulation, and pool liquidity verification for autonomous trading agents, gated by x402 on Base.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "rugshield": "./dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "scan": "tsx src/bin/cli.ts",
+    "worker:scanner": "tsx scripts/start_scanner_daemon.ts",
+    "mcp": "node dist/mcp/server.js",
+    "mcp:dev": "tsx src/mcp/server.ts",
+    "bot": "tsx scripts/start_telegram_bot.ts",
+    "test": "tsx test/simulator.test.ts",
+    "seed": "tsx scripts/seed_payment.ts"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@coinbase/cdp-sdk": "^1.58.0",
+    "@hono/node-server": "^1.13.7",
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "@x402/core": "^2.28.0",
+    "@x402/evm": "^2.28.0",
+    "@x402/extensions": "^2.28.0",
+    "@x402/fetch": "^2.28.0",
+    "@x402/svm": "^2.28.0",
+    "apify": "^3.7.2",
+    "dotenv": "^16.4.7",
+    "hono": "^4.6.14",
+    "lru-cache": "^11.0.2",
+    "viem": "^2.21.57",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

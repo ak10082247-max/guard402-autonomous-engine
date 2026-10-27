@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+web3
+httpx
+mcp
+pyjwt>=2.8.0
+cryptography>=42.0.0
+eth-account>=0.11.0

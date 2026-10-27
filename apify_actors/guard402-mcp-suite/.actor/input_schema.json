@@ -1,0 +1,54 @@
+{
+  "title": "Guard402 Autonomous MCP Security, Web Sanitizer & DeFi Audit Suite Input",
+  "description": "Select the security audit, web extraction, or DeFi intelligence action to execute and provide the target URL, repository, contract address, or untrusted prompt.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "action": {
+      "title": "Suite Action",
+      "type": "string",
+      "description": "The security or intelligence operation to execute.",
+      "editor": "select",
+      "default": "audit_mcp_repo",
+      "enum": [
+        "audit_mcp_repo",
+        "sanitize_prompt",
+        "stealth_extract",
+        "scan_base_token",
+        "contract_audit",
+        "polymarket_whale_radar"
+      ],
+      "enumTitles": [
+        "Audit MCP Repository ($0.02)",
+        "Sanitize Untrusted Prompt ($0.01)",
+        "SSRF-Safe Stealth Web Extract ($0.02)",
+        "Scan Base Token for Honeypot/Rug ($0.02)",
+        "Smart Contract Security Audit + Patch ($0.05)",
+        "Polymarket Whale & Odds Radar ($0.02)"
+      ]
+    },
+    "target": {
+      "title": "Target (Repo URL / Web URL / Token or Contract Address / Prompt)",
+      "type": "string",
+      "description": "GitHub repository URL (for audit_mcp_repo), untrusted prompt text (for sanitize_prompt), web URL (for stealth_extract), Base token/contract 0x address (for scan_base_token / contract_audit), or market query (for polymarket_whale_radar).",
+      "editor": "textfield",
+      "default": "https://github.com/modelcontextprotocol/servers",
+      "prefill": "https://github.com/modelcontextprotocol/servers"
+    },
+    "include_patch": {
+      "title": "Include AutoPatch Vault Remediation Diff",
+      "type": "boolean",
+      "description": "If true, generates a deterministic unified diff security patch preview and attaches x402 AutoPatch Vault metadata.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "strict_mode": {
+      "title": "Strict Security Mode",
+      "type": "boolean",
+      "description": "Enforce strict SSRF filtering, zero-trust prompt redaction, and conservative bytecode risk scoring.",
+      "editor": "checkbox",
+      "default": true
+    }
+  },
+  "required": ["action", "target"]
+}

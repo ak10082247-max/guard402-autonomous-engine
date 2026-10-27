@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-06-18/server.schema.json",
+  "name": "io.github.kurox402/guard402-autonomous-engine",
+  "title": "Guard402 Autonomous Security & AutoPatch Vault",
+  "description": "Unified MCP security firewall (CanaryGuard), Polymarket whale radar (StealthGuard), RugShield honeypot simulator, and x402 V2 AutoPatch Vault.",
+  "version": "2.1.0",
+  "repository": {
+    "url": "https://github.com/kurox402/guard402-autonomous-engine",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "transport_type": "streamable-http",
+      "url": "https://guard402-autonomous-engine.onrender.com/mcp"
+    }
+  ]
+}

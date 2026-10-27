@@ -1,0 +1,10 @@
+.env
+.env.*
+node_modules/
+dist/
+*.pem
+*.log
+seed-result.json
+mcp-publisher.exe
+state/
+*.exe

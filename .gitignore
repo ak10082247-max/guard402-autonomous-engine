@@ -1,0 +1,25 @@
+# Secrets and environment files
+.env
+.env.*
+.env*
+*.env
+*.pem
+*.key
+*secret*.json
+cdp_api_key*.json
+
+# Dependencies and build artifacts
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+dist/
+build/
+.venv/
+venv/
+
+# Databases and local state
+*.db
+*.sqlite
+*.sqlite3

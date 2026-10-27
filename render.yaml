@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: guard402-autonomous-engine
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn gateway.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PAYOUT_WALLET_ADDRESS
+        value: '0x73279fa4BadA7CAC888c62CDa4f5c8104765f6f1'
+      - key: PYTHON_VERSION
+        value: '3.11.8'

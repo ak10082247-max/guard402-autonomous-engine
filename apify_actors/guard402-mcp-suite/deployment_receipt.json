@@ -1,0 +1,38 @@
+{
+  "actor_id": "IikcDKzk09PKmNEe0",
+  "actor_name": "kuroxreal/guard402-autonomous-mcp-suite",
+  "title": "Guard402 Autonomous MCP Security, Web Sanitizer & DeFi Suite",
+  "is_public": true,
+  "console_url": "https://console.apify.com/actors/IikcDKzk09PKmNEe0",
+  "public_store_url": "https://apify.com/kuroxreal/guard402-autonomous-mcp-suite",
+  "api_actor_url": "https://api.apify.com/v2/acts/IikcDKzk09PKmNEe0",
+  "build_id": "7iD3gg4aw78vRLF8S",
+  "build_version": "1.0.1",
+  "build_tag": "latest",
+  "build_status": "SUCCEEDED",
+  "verification_run_id": "BQwUaQYP95txCl4w0",
+  "verification_run_status": "SUCCEEDED",
+  "default_dataset_id": "GoUR2Jp65T6QIpls0",
+  "dataset_items_url": "https://api.apify.com/v2/datasets/GoUR2Jp65T6QIpls0/items?clean=true&format=json",
+  "pricing_model": "PAY_PER_EVENT",
+  "pay_per_event_events": {
+    "mcp_security_audit": 0.02,
+    "prompt_firewall_scan": 0.01,
+    "stealth_web_extract": 0.02,
+    "token_rug_simulation": 0.02,
+    "smart_contract_patch_preview": 0.05
+  },
+  "verification_output_sample": {
+    "action": "audit_mcp_repo",
+    "target": "https://github.com/modelcontextprotocol/servers",
+    "status": "completed",
+    "security_score": 94,
+    "risk_level": "LOW",
+    "charged_event": "mcp_security_audit",
+    "charged_price_usd": 0.02,
+    "charge_status": "charged:mcp_security_audit($0.02)",
+    "safety_receipt": "guard402-v2-a675da6da52f2b8b",
+    "timestamp": "2026-10-27T14:54:49.573952+00:00",
+    "autopatch_vault_id": "apv-0e8747c50ee3"
+  }
+}

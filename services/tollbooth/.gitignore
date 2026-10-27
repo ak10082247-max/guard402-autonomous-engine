@@ -1,0 +1,13 @@
+venv/
+.venv/
+__pycache__/
+*.env
+*.env.*
+*.db
+patch_*.py
+search.py
+index_bazaar.cjs
+agent_pinger/
+
+mcp-publisher.exe
+

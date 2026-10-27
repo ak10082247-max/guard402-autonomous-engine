@@ -1,0 +1,67 @@
+name: Guard402 Autonomous Static Compliance Scanner & Vault Outbound
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      send_live_proof:
+        description: "Send live batch execution proof email to SMTP_USER"
+        required: false
+        default: "true"
+      max_mcp_targets:
+        description: "Maximum public MCP repositories to scan in this batch"
+        required: false
+        default: "3"
+      max_base_targets:
+        description: "Maximum verified Base contracts to scan in this batch"
+        required: false
+        default: "2"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  autonomous-bounty-scanner:
+    name: Discover, Static-Audit, Vault Patch & Deliver Scorecards
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PAYOUT_WALLET_ADDRESS: ${{ secrets.PAYOUT_WALLET_ADDRESS }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      BASESCAN_API_KEY: ${{ secrets.BASESCAN_API_KEY }}
+      OPENAI_OR_LLM_KEY: ${{ secrets.OPENAI_OR_LLM_KEY }}
+      STRIPE_PAYMENT_LINK: ${{ secrets.STRIPE_PAYMENT_LINK }}
+      LIVE_GATEWAY_URL: ${{ secrets.LIVE_GATEWAY_URL }}
+      SCANNER_GITHUB_PAT: ${{ secrets.SCANNER_GITHUB_PAT }}
+      SEND_LIVE_PROOF: ${{ github.event.inputs.send_live_proof || 'true' }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Execute Autonomous Static Compliance Scanner
+        run: |
+          MCP_LIMIT="${{ github.event.inputs.max_mcp_targets || '3' }}"
+          BASE_LIMIT="${{ github.event.inputs.max_base_targets || '2' }}"
+          python scripts/autonomous_bounty_scanner.py \
+            --max-mcp-targets "${MCP_LIMIT}" \
+            --max-base-targets "${BASE_LIMIT}" \
+            --send-maintainer-emails \
+            --send-live-proof
+
+      - name: Commit Updated Idempotency Ledger & Vault Snapshot
+        run: |
+          git config user.name "guard402-autonomous-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain state/)" ]; then
+            git add state/
+            git commit -m "chore(state): update autonomous scanner idempotency ledger [skip ci]"
+            git push || true
+          fi

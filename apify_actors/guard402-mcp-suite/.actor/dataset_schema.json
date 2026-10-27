@@ -1,0 +1,101 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "title": "Executed Action",
+        "description": "The Guard402 suite action executed",
+        "example": "audit_mcp_repo"
+      },
+      "target": {
+        "type": "string",
+        "title": "Target",
+        "description": "Audited repository, URL, contract address, or prompt snippet",
+        "example": "https://github.com/modelcontextprotocol/servers"
+      },
+      "status": {
+        "type": "string",
+        "title": "Execution Status",
+        "description": "completed, sanitized, or blocked",
+        "example": "completed"
+      },
+      "security_score": {
+        "type": "number",
+        "title": "Security Score (0-100)",
+        "description": "Normalized security & compliance score from 0 (critical risk) to 100 (verified safe)",
+        "example": 94
+      },
+      "risk_level": {
+        "type": "string",
+        "title": "Risk Level",
+        "description": "LOW, MEDIUM, HIGH, or CRITICAL",
+        "example": "LOW"
+      },
+      "charged_event": {
+        "type": "string",
+        "title": "Charged PPE Event",
+        "description": "The Pay-Per-Event billing key triggered for this result",
+        "example": "mcp_security_audit"
+      },
+      "findings": {
+        "type": "array",
+        "title": "Security & Alpha Findings",
+        "description": "Structured list of vulnerabilities, neutralized threats, on-chain checks, or whale signals",
+        "items": {
+          "type": "object"
+        }
+      },
+      "autopatch_vault": {
+        "type": "object",
+        "title": "AutoPatch Vault Remediation",
+        "description": "Deterministic remediation patch preview and x402 AutoPatch Vault links"
+      },
+      "safety_receipt": {
+        "type": "string",
+        "title": "Cryptographic Receipt ID",
+        "description": "Deterministic SHA-256 verification receipt",
+        "example": "guard402-v2-8f93a1c2e4b0"
+      },
+      "timestamp": {
+        "type": "string",
+        "title": "Timestamp (UTC)",
+        "description": "ISO-8601 execution timestamp"
+      }
+    },
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Guard402 Security & Intelligence Overview",
+      "description": "Summary of security scores, risk levels, findings, and AutoPatch Vault links",
+      "transformation": {
+        "fields": [
+          "action",
+          "target",
+          "status",
+          "security_score",
+          "risk_level",
+          "charged_event",
+          "safety_receipt",
+          "timestamp"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "action": { "label": "Action" },
+          "target": { "label": "Target" },
+          "status": { "label": "Status" },
+          "security_score": { "label": "Security Score" },
+          "risk_level": { "label": "Risk Level" },
+          "charged_event": { "label": "PPE Event" },
+          "safety_receipt": { "label": "Receipt" },
+          "timestamp": { "label": "Timestamp" }
+        }
+      }
+    }
+  }
+}

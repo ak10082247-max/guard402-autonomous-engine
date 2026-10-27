@@ -1,0 +1,3 @@
+startCommand:
+  type: stdio
+  config: "uv run python tollbooth_agent.py"

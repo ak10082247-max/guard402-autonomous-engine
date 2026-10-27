@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "name": "guard402-autonomous-mcp-suite",
+  "title": "Guard402 Autonomous MCP Security, Web Sanitizer & DeFi Suite",
+  "description": "Autonomous 6-in-1 AI Agent Security & DeFi Intelligence Suite: Static MCP Repo Audits, Deterministic Prompt-Injection Firewall, SSRF-Safe Stealth Web Extraction, Base Token Honeypot Simulation, Smart Contract Patch Preview & Polymarket Whale Radar.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "payPerEvent": {
+    "events": {
+      "mcp_security_audit": {
+        "eventTitle": "MCP Repository Security & Compliance Audit",
+        "eventDescription": "Static AST & manifest audit of MCP servers for command injection, SSRF, schema drift, and credential exposure",
+        "eventPriceUsd": 0.02
+      },
+      "prompt_firewall_scan": {
+        "eventTitle": "Deterministic Prompt-Injection Firewall Scan",
+        "eventDescription": "Multi-layer instruction override neutralization, hidden Unicode scrubbing, and wallet-drainer detection",
+        "eventPriceUsd": 0.01
+      },
+      "stealth_web_extract": {
+        "eventTitle": "SSRF-Safe Stealth Web Extraction & Sanitization",
+        "eventDescription": "Anti-bot web extraction to clean LLM Markdown with integrated CanaryGuard prompt-injection scrubbing",
+        "eventPriceUsd": 0.02
+      },
+      "token_rug_simulation": {
+        "eventTitle": "Base Token Honeypot & Rug Simulation",
+        "eventDescription": "On-chain Base EVM bytecode inspection, liquidity lock check, and pre-trade honeypot calldata simulation",
+        "eventPriceUsd": 0.02
+      },
+      "smart_contract_patch_preview": {
+        "eventTitle": "Autonomous Smart Contract Audit & AutoPatch Preview",
+        "eventDescription": "Deep vulnerability detection with deterministic unified diff remediation patch and AutoPatch Vault link",
+        "eventPriceUsd": 0.05
+      }
+    }
+  }
+}
