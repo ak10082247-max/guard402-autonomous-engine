@@ -79,7 +79,7 @@ SOLANA_FEE_PAYER = "CjNFTjvBhbJJd2B5ePPMHRLx1ELZpa8dwQgGL727eKww"
 
 PAYAI_FACILITATOR_URL = os.environ.get("PAYAI_FACILITATOR_URL", "https://facilitator.payai.network")
 PUBLIC_BASE_URL = os.environ.get("PUBLIC_BASE_URL", "https://guard402-autonomous-engine.onrender.com").rstrip("/")
-STRIPE_PAYMENT_LINK = os.environ.get("STRIPE_PAYMENT_LINK", "")
+STRIPE_PAYMENT_LINK = os.environ.get("STRIPE_PAYMENT_LINK", "https://buy.stripe.com/bJe9AT02S8xb4ReenvbEA07")
 
 TRANSFER_EVENT_TOPIC = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 

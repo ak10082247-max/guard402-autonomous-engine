@@ -1,8 +1,139 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-27T14:54:30+00:00",
-  "scanned_targets": {},
-  "daily_email_counts": {},
+  "updated_at": "2026-10-27T15:10:21+00:00",
+  "scanned_targets": {
+    "github:frumu-ai/tandem": {
+      "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
+      "target_name": "frumu-ai/tandem",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/frumu-ai/tandem",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-frumu-ai-tandem-3d7713c94c",
+      "vault_registered_remotely": true,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/1",
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:09:58+00:00"
+    },
+    "github:apexai-academy/sample-agents": {
+      "audit_id": "audit-github-apexai-academy-sample-7ebf497f5b",
+      "target_name": "ApexAI-Academy/sample-agents",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/ApexAI-Academy/sample-agents",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apexai-academy-sample-7ebf497f5b",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:00+00:00"
+    },
+    "github:adgrowofficial/getlead-mcp": {
+      "audit_id": "audit-github-adgrowofficial-getlea-1b834dd385",
+      "target_name": "Adgrowofficial/getlead-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Adgrowofficial/getlead-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-adgrowofficial-getlea-1b834dd385",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:03+00:00"
+    },
+    "github:datadubai/dubai-real-estate-dld": {
+      "audit_id": "audit-github-datadubai-dubai-real--9c909b0a11",
+      "target_name": "datadubai/dubai-real-estate-dld",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/datadubai/dubai-real-estate-dld",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-datadubai-dubai-real--9c909b0a11",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:08+00:00"
+    },
+    "base:0x2807458a19123fd0aa73c488e30af41b8f166c84": {
+      "audit_id": "audit-base-0x2807458a19123fd0aa73c-29f916b9e9",
+      "target_name": "UUPSProxy (0x2807458a...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x2807458a19123Fd0Aa73c488E30Af41B8f166C84#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2807458a19123fd0aa73c-29f916b9e9",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:12+00:00"
+    },
+    "base:0x110b6e5b547ca429e57621a6d7f8f785d6e8f99e": {
+      "audit_id": "audit-base-0x110b6e5b547ca429e5762-95243807ef",
+      "target_name": "PancakePair (0x110b6e5b...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x110b6e5b547Ca429E57621a6d7F8F785D6e8F99E#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x110b6e5b547ca429e5762-95243807ef",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:15+00:00"
+    },
+    "base:0x1e2726d9ed38aadd0c195619dbcf4648b57e0b0c": {
+      "audit_id": "audit-base-0x1e2726d9ed38aadd0c195-e5658f742c",
+      "target_name": "AaveV3Strategy (0x1e2726d9...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x1e2726d9ED38aadD0c195619dBcf4648b57E0B0C#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1e2726d9ed38aadd0c195-e5658f742c",
+      "vault_registered_remotely": true,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T15:10:18+00:00"
+    }
+  },
+  "daily_email_counts": {
+    "2026-10-27": 1
+  },
   "unsubscribed_emails": [],
-  "runs": []
+  "runs": [
+    {
+      "run_at": "2026-10-27T15:10:21+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 4,
+      "base_contracts_discovered": 3,
+      "audits_generated": 7,
+      "audit_ids": [
+        "audit-github-frumu-ai-tandem-3d7713c94c",
+        "audit-github-apexai-academy-sample-7ebf497f5b",
+        "audit-github-adgrowofficial-getlea-1b834dd385",
+        "audit-github-datadubai-dubai-real--9c909b0a11",
+        "audit-base-0x2807458a19123fd0aa73c-29f916b9e9",
+        "audit-base-0x110b6e5b547ca429e5762-95243807ef",
+        "audit-base-0x1e2726d9ed38aadd0c195-e5658f742c"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-frumu-ai-tandem-3d7713c94c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apexai-academy-sample-7ebf497f5b",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-adgrowofficial-getlea-1b834dd385",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-datadubai-dubai-real--9c909b0a11",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2807458a19123fd0aa73c-29f916b9e9",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x110b6e5b547ca429e5762-95243807ef",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1e2726d9ed38aadd0c195-e5658f742c"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/1",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/2"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 7 Static Audits Vaulted \u2014 Sample: audit-github-frumu-ai-tandem-3d7713c94c",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-27T15:10:21+00:00"
+      }
+    }
+  ]
 }

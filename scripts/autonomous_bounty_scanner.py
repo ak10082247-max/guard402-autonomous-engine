@@ -122,7 +122,7 @@ SOLANA_MERCHANT_WALLET: str = os.environ.get(
     "SOLANA_MERCHANT_WALLET", "3tQ4GthjUMqNsyrb1rZMocMHoNewFQWjDUvHZqWeYuCN"
 ).strip()
 
-STRIPE_PAYMENT_LINK: str = os.environ.get("STRIPE_PAYMENT_LINK", "").strip()
+STRIPE_PAYMENT_LINK: str = os.environ.get("STRIPE_PAYMENT_LINK", "https://buy.stripe.com/bJe9AT02S8xb4ReenvbEA07").strip()
 VAULT_ADMIN_SECRET: str = os.environ.get("VAULT_ADMIN_SECRET", "").strip()
 
 MAX_EMAILS_PER_DAY: int = int(os.environ.get("MAX_EMAILS_PER_DAY", "20"))
