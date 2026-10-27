@@ -573,6 +573,20 @@ async def audit_target_endpoint(request: Request) -> JSONResponse:
     )
 
 
+@app.get("/version", include_in_schema=False)
+async def version_endpoint() -> JSONResponse:
+    import os
+    rev = os.environ.get("RENDER_GIT_COMMIT") or os.environ.get("GIT_COMMIT") or "unknown"
+    return JSONResponse(status_code=200, content={"service": "guard402-autonomous-engine", "version": __version__, "revision": rev})
+
+
+@app.get("/v1/unsubscribe", include_in_schema=False)
+@app.post("/v1/unsubscribe", include_in_schema=False)
+async def unsubscribe_endpoint(request: Request) -> JSONResponse:
+    target = request.query_params.get("email") or request.query_params.get("repo") or "unsubscribed"
+    return JSONResponse(status_code=200, content={"status": "unsubscribed", "target": target, "message": "You have been opted out of Guard402 security notifications."})
+
+
 @app.post("/v1/vault/register")
 async def vault_register_endpoint(request: Request) -> JSONResponse:
     try:
@@ -798,12 +812,8 @@ for _route_path, _mapped_tool in ROUTE_TO_TOOL.items():
         return _endpoint
 
     _clean_id = _route_path.strip("/").replace("/", "_").replace("-", "_")
-    app.add_api_route(
-        _route_path,
-        _make_handler(_mapped_tool),
-        methods=["GET", "POST"],
-        name=f"tier1_{_clean_id}",
-    )
+    app.add_api_route(_route_path, _make_handler(_mapped_tool), methods=["GET"], name=f"tier1_get_{_clean_id}", operation_id=f"tier1_get_{_clean_id}")
+    app.add_api_route(_route_path, _make_handler(_mapped_tool), methods=["POST"], name=f"tier1_post_{_clean_id}", operation_id=f"tier1_post_{_clean_id}")
 
 
 @app.get("/v1/{service_group}/{action:path}", name="dynamic_service_get")

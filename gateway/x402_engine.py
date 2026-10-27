@@ -481,6 +481,7 @@ def verify_x402_payment(
                 "resource": {"url": resource_url, "description": tool_name, "mimeType": "application/json"},
                 "accepted": solana_req,
                 "payload": parsed.get("payload") or {"transaction": sol_tx_b64},
+                "extensions": parsed.get("extensions") or build_bazaar_extension(tool_name=tool_name, description=tool_name),
             },
             "paymentRequirements": solana_req,
         }
@@ -634,6 +635,7 @@ def verify_x402_payment(
                 "nonce": nonce,
             },
         },
+        "extensions": parsed.get("extensions") or build_bazaar_extension(tool_name=tool_name, description=tool_name),
     }
     try:
         r_status, data = _http_post_json(

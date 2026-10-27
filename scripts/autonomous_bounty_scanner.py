@@ -340,7 +340,7 @@ def extract_maintainer_email_from_repo(
     package_json_text: str,
     pyproject_text: str,
 ) -> Optional[str]:
-    """Attempt to locate a public maintainer contact email from manifest or commit metadata."""
+    """Attempt to locate a public maintainer contact email from manifest, owner profile, or commit metadata."""
     for manifest_text in (package_json_text, pyproject_text):
         if not manifest_text:
             continue
@@ -348,18 +348,28 @@ def extract_maintainer_email_from_repo(
             if is_valid_public_email(match):
                 return match.lower()
 
+    # Check repository owner's public GitHub profile email
+    owner = full_name.split("/", 1)[0] if "/" in full_name else ""
+    if owner:
+        u_status, u_data = http_json(f"https://api.github.com/users/{owner}", headers=github_headers(), timeout=10)
+        if u_status == 200 and isinstance(u_data, dict):
+            u_email = str(u_data.get("email") or "").strip()
+            if is_valid_public_email(u_email):
+                return u_email.lower()
+
     # Check latest commits via GitHub API if needed
-    commits_url = f"https://api.github.com/repos/{full_name}/commits?per_page=5"
+    commits_url = f"https://api.github.com/repos/{full_name}/commits?per_page=8"
     status, data = http_json(commits_url, headers=github_headers(), timeout=10)
     if status == 200 and isinstance(data, list):
         for commit_item in data:
             if not isinstance(commit_item, dict):
                 continue
             commit_obj = commit_item.get("commit") or {}
-            author_obj = commit_obj.get("author") or {}
-            email_cand = str(author_obj.get("email") or "").strip()
-            if is_valid_public_email(email_cand):
-                return email_cand.lower()
+            for role in ("author", "committer"):
+                role_obj = commit_obj.get(role) or {}
+                email_cand = str(role_obj.get("email") or "").strip()
+                if is_valid_public_email(email_cand):
+                    return email_cand.lower()
     return None
 
 
@@ -459,10 +469,15 @@ def discover_public_mcp_repos(limit: int = 10) -> List[Dict[str, Any]]:
                     "source": "github_topic_mcp_server",
                 }
 
-    results: List[Dict[str, Any]] = []
-    for full_name in discovered_full_names:
-        if len(results) >= limit:
+    ledger_scanned = set(load_ledger().get("scanned_targets", {}).keys())
+    with_email: List[Dict[str, Any]] = []
+    without_email: List[Dict[str, Any]] = []
+
+    for full_name in discovered_full_names[:45]:
+        if len(with_email) >= limit:
             break
+        if f"github:{full_name.lower()}" in ledger_scanned:
+            continue
         meta = registry_metadata_by_repo.get(full_name, {})
         default_branch = str(meta.get("default_branch") or "main")
 
@@ -484,22 +499,25 @@ def discover_public_mcp_repos(limit: int = 10) -> List[Dict[str, Any]]:
             snapshot.get("pyproject_toml", ""),
         )
 
-        results.append(
-            {
-                "target_id": f"github:{full_name.lower()}",
-                "target_type": "mcp_repo",
-                "repo_full_name": full_name,
-                "target_name": full_name,
-                "target_url": f"https://github.com/{full_name}",
-                "default_branch": default_branch,
-                "description": meta.get("description") or "Public Model Context Protocol Server",
-                "language": meta.get("language") or "TypeScript",
-                "discovery_source": meta.get("source", "modelcontextprotocol_registry"),
-                "maintainer_email": maintainer_email,
-                "snapshot": snapshot,
-            }
-        )
+        item_obj = {
+            "target_id": f"github:{full_name.lower()}",
+            "target_type": "mcp_repo",
+            "repo_full_name": full_name,
+            "target_name": full_name,
+            "target_url": f"https://github.com/{full_name}",
+            "default_branch": default_branch,
+            "description": meta.get("description") or "Public Model Context Protocol Server",
+            "language": meta.get("language") or "TypeScript",
+            "discovery_source": meta.get("source", "modelcontextprotocol_registry"),
+            "maintainer_email": maintainer_email,
+            "snapshot": snapshot,
+        }
+        if maintainer_email:
+            with_email.append(item_obj)
+        else:
+            without_email.append(item_obj)
 
+    results = (with_email + without_email)[:limit]
     return results
 
 
@@ -512,7 +530,7 @@ def discover_verified_base_contracts(limit: int = 5) -> List[Dict[str, Any]]:
     3) Etherscan V2 / BaseScan API (`https://api.basescan.org/api`) fallback
     """
     contracts: List[Dict[str, Any]] = []
-    seen_addresses: set[str] = set()
+    seen_addresses: set[str] = {k.split(":", 1)[1].lower() for k in load_ledger().get("scanned_targets", {}).keys() if k.startswith("base:")}
 
     # 1. Sourcify V2 Base Mainnet real-time verified contracts feed + Etherscan V2 enrichment
     sf_status, sf_data = http_json(SOURCIFY_V2_BASE_LIST_URL, timeout=14)

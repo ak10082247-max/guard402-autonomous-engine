@@ -435,8 +435,9 @@ def register_vault_entry(payload: Dict[str, Any]) -> Dict[str, Any]:
     and custom patch bundles into the live AutoPatch Vault via `POST /v1/vault/register`.
     """
     init_vault_db()
-    target = str(payload.get("target") or "https://github.com/modelcontextprotocol/servers").strip()
-    custom_findings = payload.get("findings") if isinstance(payload.get("findings"), list) else None
+    target = str(payload.get("target") or payload.get("target_url") or payload.get("target_name") or "https://github.com/modelcontextprotocol/servers").strip()
+    raw_findings = payload.get("findings") if isinstance(payload.get("findings"), list) else (payload.get("failed_checks") if isinstance(payload.get("failed_checks"), list) else None)
+    custom_findings = raw_findings
     base_entry = audit_target(target, custom_findings=custom_findings)
 
     audit_id = str(payload.get("audit_id") or base_entry["audit_id"]).strip()
@@ -451,9 +452,10 @@ def register_vault_entry(payload: Dict[str, Any]) -> Dict[str, Any]:
         scorecard["grade"] = str(payload["grade"])
 
     patch_bundle["audit_id"] = audit_id
-    for key in ("unified_diff", "hardened_middleware_py", "hardened_middleware_ts", "pr_description_md"):
-        if payload.get(key):
-            patch_bundle[key] = str(payload[key])
+    for key, alt in (("unified_diff", "patch_diff"), ("hardened_middleware_py", "middleware_code"), ("hardened_middleware_ts", "middleware_code_ts"), ("pr_description_md", "pr_description")):
+        val = payload.get(key) or payload.get(alt)
+        if val:
+            patch_bundle[key] = str(val)
 
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     conn = _get_conn()
