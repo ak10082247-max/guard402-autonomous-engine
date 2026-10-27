@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-27T15:10:21+00:00",
+  "updated_at": "2026-10-27T22:03:07+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -92,10 +92,75 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-27T15:10:18+00:00"
+    },
+    "github:rgdevment/tisty": {
+      "audit_id": "audit-github-rgdevment-tisty-21deed9df5",
+      "target_name": "rgdevment/Tisty",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/rgdevment/Tisty",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rgdevment-tisty-21deed9df5",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/3",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-27T22:02:42+00:00"
+    },
+    "github:hproxy-com/free-proxy-list": {
+      "audit_id": "audit-github-hproxy-com-free-proxy-0c16e39cf9",
+      "target_name": "hproxy-com/free-proxy-list",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/hproxy-com/free-proxy-list",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-hproxy-com-free-proxy-0c16e39cf9",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/4",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-27T22:02:59+00:00"
+    },
+    "github:wirecatlabs/cli-core": {
+      "audit_id": "audit-github-wirecatlabs-cli-core-048a6c0b73",
+      "target_name": "WireCatLabs/cli-core",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/WireCatLabs/cli-core",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-wirecatlabs-cli-core-048a6c0b73",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/5",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-27T22:03:03+00:00"
+    },
+    "base:0x2daffd68b196085c5806171da3f336cb8e943361": {
+      "audit_id": "audit-base-0x2daffd68b196085c58061-fc0390fc36",
+      "target_name": "DegenRocketToken (0x2daFfd68...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x2daFfd68B196085c5806171dA3f336CB8E943361#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2daffd68b196085c58061-fc0390fc36",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T22:03:05+00:00"
+    },
+    "base:0xb07c9a7c413a67f47218367da6e95dd244338750": {
+      "audit_id": "audit-base-0xb07c9a7c413a67f472183-f94a9bb85e",
+      "target_name": "ERC1967Proxy (0xb07c9a7c...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xb07c9a7c413A67f47218367DA6E95dD244338750#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb07c9a7c413a67f472183-f94a9bb85e",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-27T22:03:06+00:00"
     }
   },
   "daily_email_counts": {
-    "2026-10-27": 1
+    "2026-10-27": 5
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -133,6 +198,39 @@
         "subject": "[Guard402 Live Proof] 7 Static Audits Vaulted \u2014 Sample: audit-github-frumu-ai-tandem-3d7713c94c",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-27T15:10:21+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-27T22:03:07+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-rgdevment-tisty-21deed9df5",
+        "audit-github-hproxy-com-free-proxy-0c16e39cf9",
+        "audit-github-wirecatlabs-cli-core-048a6c0b73",
+        "audit-base-0x2daffd68b196085c58061-fc0390fc36",
+        "audit-base-0xb07c9a7c413a67f472183-f94a9bb85e"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rgdevment-tisty-21deed9df5",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-hproxy-com-free-proxy-0c16e39cf9",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-wirecatlabs-cli-core-048a6c0b73",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2daffd68b196085c58061-fc0390fc36",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb07c9a7c413a67f472183-f94a9bb85e"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/3",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/4",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/5"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-rgdevment-tisty-21deed9df5",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-27T22:03:07+00:00"
       }
     }
   ]
