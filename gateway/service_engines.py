@@ -1,561 +1,397 @@
-"""
-Unified Service Execution Engines & MCP Tool Registry for Guard402 Autonomous Engine.
-Consolidates CanaryGuard, StealthGuard, RugShield, Agent Tollbooth, and AutoPatch Vault
-into 15 high-speed, MCP 2025-06-18 annotated tools with strict SSRF protection.
-"""
+"""Fixed upstream adapters: no fabricated analysis or local payment settlement."""
 
+import json
 import re
-import unicodedata
-from typing import Dict, Any, List, Optional
+from decimal import Decimal
+import httpx
+from .ssrf_guard import assert_safe_url
 
-from .ssrf_guard import assert_safe_url, validate_safe_url, SSRFBlockedError
-from .autopatch_vault import audit_target, get_vault_entry, AUTOPATCH_PRICE_USD
+CANARY = "https://canaryguard-402.onrender.com"
+STEALTH = "https://stealthguard-402.onrender.com"
+RUG = "https://rugshield-402.onrender.com"
+TOLL = "https://x402-agent-tollbooth.onrender.com"
+# name -> canonical URL, reference price, scope, property types, required fields.
+# URLs cannot be changed through user input, environment, forwarded headers or redirects.
+UPSTREAM_TOOLS = {
+    "canaryguard_sanitize_prompt": (
+        CANARY + "/v1/sanitize",
+        "0.010",
+        "Inspect and sanitize untrusted text",
+        {"content": "string", "strict_mode": "boolean"},
+        ["content"],
+    ),
+    "canaryguard_audit_mcp_schema": (
+        CANARY + "/v1/mcp-tool-auditor",
+        "0.010",
+        "Inspect one MCP tool; multi-tool batches unsupported",
+        {"tool_name": "string", "tool_description": "string", "input_schema": "object"},
+        ["tool_name"],
+    ),
+    "canaryguard_verify_eip712": (
+        CANARY + "/v1/eip712-signature-audit",
+        "0.010",
+        "Inspect EIP-712 typed data; no universal safety certificate",
+        {"typed_data": "object"},
+        ["typed_data"],
+    ),
+    "stealthguard_sanitize_url": (
+        STEALTH + "/v1/stealth_scrape_and_sanitize",
+        "0.015",
+        "Acquire and sanitize the requested public page",
+        {
+            "url": "string",
+            "strict_mode": "boolean",
+            "render_js": "boolean",
+            "extract_schema": "object",
+        },
+        ["url"],
+    ),
+    "stealthguard_polymarket_whale_radar": (
+        STEALTH + "/v1/alpha/polymarket-whale-orderflow",
+        "0.020",
+        "Measured Polymarket trades; optional identity-matched Polymarket/Limitless outcome books and 100-share VWAP with venue fees, without a fill or profit guarantee",
+        {
+            "min_order_usd": "number",
+            "include_cross_venue": "boolean",
+            "strict_mode": "boolean",
+        },
+        [],
+    ),
+    "stealthguard_odds_divergence": (
+        STEALTH + "/v1/polymarket_alpha_divergence",
+        "0.020",
+        "Identity-checked supported paired markets and displayed book evidence; no execution or profit guarantee",
+        {"category": "string", "limit": "integer", "strict_mode": "boolean"},
+        [],
+    ),
+    "rugshield_scan_token": (
+        RUG + "/v1/scan",
+        "0.010",
+        "Base: scoped V2 buy/sell. Solana: only explicit simulate_sell:false mint inspection; full simulation unavailable",
+        {
+            "token_address": "string",
+            "chain": "string",
+            "chain_id": "integer",
+            "simulate_sell": "boolean",
+        },
+        ["token_address"],
+    ),
+    "rugshield_simulate_honeypot": (
+        RUG + "/v1/scan",
+        "0.010",
+        "Base Uniswap V2, 0.001 ETH, unsigned stateful buy/sell; other sizes/pools unsupported",
+        {"token_address": "string", "chain": "string", "simulate_sell": "boolean"},
+        ["token_address"],
+    ),
+    "rugshield_sybil_cluster_map": (
+        RUG + "/v1/audit/holder-cluster-map",
+        "0.020",
+        "Full holder-cluster acquisition unavailable; no settlement",
+        {"token_address": "string", "chain": "string"},
+        ["token_address"],
+    ),
+    "tollbooth_ai_intel": (
+        TOLL + "/toll/ai_intel",
+        "0.001",
+        "Configured AI review or explicit limited_review:true pattern-only review; no security guarantee",
+        {
+            "prompt": "string",
+            "contractAddress": "string",
+            "chain": "string",
+            "isPatch": "boolean",
+            "limited_review": "boolean",
+        },
+        [],
+    ),
+    "tollbooth_arbitrage_scan": (
+        TOLL + "/toll/arbitrage_scan",
+        "0.002",
+        "Acquire supported routes for a specified exact decimal-string amount; profit is never guaranteed",
+        {
+            "pair": "string",
+            "chain": "string",
+            "amount": "string",
+            "min_spread_bps": "integer",
+            "slippage_bps": "integer",
+        },
+        ["pair"],
+    ),
+    "tollbooth_smart_router": (
+        TOLL + "/toll/smart_router",
+        "0.001",
+        "Acquire supported execution route quotes using the supplied exact decimal-string human-unit amount",
+        {
+            "tokenIn": "string",
+            "tokenOut": "string",
+            "amount": "string",
+            "chain": "string",
+            "slippage_bps": "integer",
+        },
+        ["tokenIn", "tokenOut", "amount"],
+    ),
+    "tollbooth_contract_audit": (
+        TOLL + "/api/audit",
+        "0.020",
+        "Contract review; limited_review:true explicitly purchases pattern-only review without a patch or safety certificate",
+        {
+            "contractAddress": "string",
+            "chain": "string",
+            "isPatch": "boolean",
+            "limited_review": "boolean",
+        },
+        ["contractAddress"],
+    ),
+}
 
-# Deterministic Prompt Injection & Wallet Drainer Regexes (CanaryGuard Engine)
-INVISIBLE_CHARS = re.compile(r"[\u00ad\u180e\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]")
-ROLE_DELIMITER = re.compile(
-    r"\[/?INST\]|<\|(?:im_start|im_end|system|developer|assistant|user)\|>|<<\/?SYS>>",
-    re.IGNORECASE,
-)
-INSTRUCTION_OVERRIDE = re.compile(
-    r"\b(?:ignore|disregard|forget|override|bypass|discard|wipe|reset)\s+"
-    r"(?:(?:all|any|the|your|prior|previous|earlier|above|system|developer|safety)\s+)*"
-    r"(?:instructions?|prompts?|rules?|directives?|guidelines?|guardrails?|constraints?)\b",
-    re.IGNORECASE,
-)
-WALLET_DRAIN_CMD = re.compile(
-    r"\b(?:send|transfer|drain|sweep|withdraw|empty|forward)\s+"
-    r"(?:(?:all|every|entire|your|my|the|remaining)\s+)*"
-    r"(?:wallet|treasury|vault|funds?|balances?|assets?|tokens?|eth|usdc|sol)\b",
-    re.IGNORECASE,
-)
-URL_IN_TEXT = re.compile(r"(?:https?|file|gopher|ftp|dict|ldap)://[^\s\"'<>]+", re.IGNORECASE)
 
-
-def _read_only_annotations(title: str) -> Dict[str, Any]:
+def _tool(name, price, description, props, required, url=None):
     return {
-        "title": title,
-        "readOnlyHint": True,
-        "destructiveHint": False,
-        "idempotentHint": True,
-        "openWorldHint": True,
+        "name": name,
+        "title": name.replace("_", " ").title(),
+        "description": description,
+        "price_usd": price,
+        "amount_units": str(int(Decimal(price) * 1000000)),
+        "upstream": url,
+        "inputSchema": {
+            "type": "object",
+            "properties": {k: {"type": v} for k, v in props.items()},
+            "required": required,
+            "additionalProperties": False,
+        },
+        "annotations": {
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": False,
+            "openWorldHint": True,
+        },
     }
 
 
-MCP_TOOLS_CATALOG: List[Dict[str, Any]] = [
-    {
-        "name": "canaryguard_sanitize_prompt",
-        "title": "CanaryGuard Prompt-Injection & Drainer Firewall",
-        "description": "Deterministic prompt-injection firewall that strips zero-width unicode, role delimiters ([INST], <|im_start|>), instruction overrides, and wallet-drainer commands.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "content": {"type": "string", "description": "Untrusted prompt, web text, or tool output to sanitize"},
-                "url": {"type": "string", "description": "Optional source URL to validate against SSRF policies"},
-                "strict_mode": {"type": "boolean", "default": True, "description": "Block payload completely on injection match"},
-            },
-            "required": ["content"],
-        },
-        "annotations": _read_only_annotations("CanaryGuard Prompt-Injection & Drainer Firewall"),
-    },
-    {
-        "name": "canaryguard_audit_mcp_schema",
-        "title": "CanaryGuard MCP 2025-06-18 Schema & Tool Poisoning Auditor",
-        "description": "Audits MCP tools/list schemas for missing 2025-06-18 annotations (readOnlyHint, destructiveHint), SSRF-vulnerable URL parameters, and description prompt-poisoning.",
-        "price_usd": "0.005",
-        "amount_units": "5000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "tools": {
-                    "type": "array",
-                    "description": "Array of MCP tool definitions to audit",
-                    "items": {"type": "object"},
-                },
-                "server_url": {"type": "string", "description": "Optional MCP server URL to validate against SSRF"},
-            },
-        },
-        "annotations": _read_only_annotations("CanaryGuard MCP 2025-06-18 Schema & Tool Poisoning Auditor"),
-    },
-    {
-        "name": "canaryguard_verify_eip712",
-        "title": "CanaryGuard EIP-712 & Permit2 Signature Firewall",
-        "description": "Audits EIP-712 typed data payloads (TransferWithAuthorization, Permit, Permit2, Seaport) for phishing domains, unlimited approvals, and drainer recipients.",
-        "price_usd": "0.005",
-        "amount_units": "5000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "primaryType": {"type": "string", "description": "EIP-712 primaryType (e.g. TransferWithAuthorization, Permit)"},
-                "domain": {"type": "object", "description": "EIP-712 domain separator object"},
-                "message": {"type": "object", "description": "EIP-712 message fields"},
-            },
-            "required": ["primaryType"],
-        },
-        "annotations": _read_only_annotations("CanaryGuard EIP-712 & Permit2 Signature Firewall"),
-    },
-    {
-        "name": "stealthguard_sanitize_url",
-        "title": "StealthGuard SSRF-Hardened Web Scraper & Sanitizer",
-        "description": "Validates target URL against strict SSRF guards (blocking localhost, RFC1918, 169.254.169.254, non-HTTP schemes) and extracts CanaryGuard-sanitized markdown.",
-        "price_usd": "0.005",
-        "amount_units": "5000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "url": {"type": "string", "description": "Public HTTP/HTTPS URL to fetch and sanitize"},
-                "strict_mode": {"type": "boolean", "default": True},
-            },
-            "required": ["url"],
-        },
-        "annotations": _read_only_annotations("StealthGuard SSRF-Hardened Web Scraper & Sanitizer"),
-    },
-    {
-        "name": "stealthguard_polymarket_whale_radar",
-        "title": "StealthGuard Polymarket Whale Orderflow Radar",
-        "description": "Scans Polymarket CLOB orderbooks and volume-to-liquidity ratios for high-conviction whale accumulation and spread divergence.",
-        "price_usd": "0.010",
-        "amount_units": "10000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "category": {"type": "string", "description": "Optional market category filter (crypto, politics, macro)"},
-                "limit": {"type": "integer", "default": 5},
-            },
-        },
-        "annotations": _read_only_annotations("StealthGuard Polymarket Whale Orderflow Radar"),
-    },
-    {
-        "name": "stealthguard_odds_divergence",
-        "title": "StealthGuard Cross-Venue Crypto Odds Divergence",
-        "description": "Computes implied probability divergence between prediction markets (Polymarket/Kalshi) and perpetual futures funding/options skew.",
-        "price_usd": "0.010",
-        "amount_units": "10000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "asset": {"type": "string", "default": "ETH", "description": "Crypto asset symbol (ETH, BTC, SOL)"},
-            },
-        },
-        "annotations": _read_only_annotations("StealthGuard Cross-Venue Crypto Odds Divergence"),
-    },
-    {
-        "name": "rugshield_scan_token",
-        "title": "RugShield Pre-Trade Token & Liquidity Gate",
-        "description": "Inspects Base and Solana token contracts for deployed bytecode, honeypot selectors, LP lock depth, and metadata injection threats.",
-        "price_usd": "0.005",
-        "amount_units": "5000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "token_address": {"type": "string", "description": "Base (0x...) or Solana token mint address"},
-                "chain": {"type": "string", "default": "base", "enum": ["base", "solana"]},
-            },
-            "required": ["token_address"],
-        },
-        "annotations": _read_only_annotations("RugShield Pre-Trade Token & Liquidity Gate"),
-    },
-    {
-        "name": "rugshield_simulate_honeypot",
-        "title": "RugShield Calldata & Buy/Sell Tax Simulator",
-        "description": "Simulates pre-trade buy and sell execution paths on Base to detect hidden transfer blocks, blacklist modifiers, and excessive sell taxes.",
-        "price_usd": "0.008",
-        "amount_units": "8000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "token_address": {"type": "string", "description": "Base token contract address (0x...)"},
-                "amount_usdc": {"type": "number", "default": 100.0},
-            },
-            "required": ["token_address"],
-        },
-        "annotations": _read_only_annotations("RugShield Calldata & Buy/Sell Tax Simulator"),
-    },
-    {
-        "name": "rugshield_sybil_cluster_map",
-        "title": "RugShield Sybil Holder Cluster Mapper",
-        "description": "Maps deployer-funded wallet clusters, top-10 holder concentration, and coordinated insider supply control.",
-        "price_usd": "0.010",
-        "amount_units": "10000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "token_address": {"type": "string", "description": "Token contract address (0x...)"},
-            },
-            "required": ["token_address"],
-        },
-        "annotations": _read_only_annotations("RugShield Sybil Holder Cluster Mapper"),
-    },
-    {
-        "name": "tollbooth_ai_intel",
-        "title": "Tollbooth Deep AI Vulnerability & Logic Intelligence",
-        "description": "Analyzes smart contract logic and agent execution payloads for exploit vectors on Base.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "prompt": {"type": "string", "description": "Contract snippet or execution plan to analyze"},
-                "contractAddress": {"type": "string", "description": "Optional Base contract address (0x...)"},
-            },
-        },
-        "annotations": _read_only_annotations("Tollbooth Deep AI Vulnerability & Logic Intelligence"),
-    },
-    {
-        "name": "tollbooth_arbitrage_scan",
-        "title": "Tollbooth Cross-DEX Arbitrage Scanner",
-        "description": "Scans Aerodrome, Uniswap V3, and BaseSwap pools on Base Mainnet for net-positive spread routes.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "pair": {"type": "string", "default": "WETH/USDC"},
-                "min_spread_bps": {"type": "integer", "default": 8},
-            },
-        },
-        "annotations": _read_only_annotations("Tollbooth Cross-DEX Arbitrage Scanner"),
-    },
-    {
-        "name": "tollbooth_smart_router",
-        "title": "Tollbooth Optimal Execution Smart Order Router",
-        "description": "Computes lowest-slippage, gas-optimized multi-hop DEX execution paths on Base Mainnet.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "tokenIn": {"type": "string", "default": "USDC"},
-                "tokenOut": {"type": "string", "default": "WETH"},
-                "amount": {"type": "string", "default": "1000"},
-            },
-        },
-        "annotations": _read_only_annotations("Tollbooth Optimal Execution Smart Order Router"),
-    },
-    {
-        "name": "tollbooth_contract_audit",
-        "title": "Tollbooth Autonomous Smart Contract Auditor",
-        "description": "Runs automated static and bytecode security verification on Base smart contracts.",
-        "price_usd": "0.010",
-        "amount_units": "10000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "contractAddress": {"type": "string", "description": "Base smart contract address (0x...)"},
-            },
-            "required": ["contractAddress"],
-        },
-        "annotations": _read_only_annotations("Tollbooth Autonomous Smart Contract Auditor"),
-    },
-    {
-        "name": "autopatch_static_audit",
-        "title": "AutoPatch Vault Static Security & MCP Compliance Scorecard",
-        "description": "Audits a public GitHub MCP repository URL or Base contract address (0x...), stores a ready-to-merge remediation patch bundle in the AutoPatch Vault, and returns the free Diagnostic Scorecard + unlock URL.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "target": {"type": "string", "description": "GitHub MCP repository URL or Base contract address (0x...)"},
-            },
-            "required": ["target"],
-        },
-        "annotations": _read_only_annotations("AutoPatch Vault Static Security & MCP Compliance Scorecard"),
-    },
-    {
-        "name": "autopatch_unlock_bundle",
-        "title": "AutoPatch Vault Remediation Bundle Inspector",
-        "description": "Retrieves the Diagnostic Scorecard and x402 V2 ($39 USDC) unlock metadata for a pre-generated AutoPatch Vault audit_id.",
-        "price_usd": "0.002",
-        "amount_units": "2000",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "audit_id": {"type": "string", "description": "AutoPatch Vault audit_id (e.g. apv_...)"},
-            },
-            "required": ["audit_id"],
-        },
-        "annotations": _read_only_annotations("AutoPatch Vault Remediation Bundle Inspector"),
-    },
+MCP_TOOLS_CATALOG = [
+    _tool(n, p, d, props, required, url)
+    for n, (url, p, d, props, required) in UPSTREAM_TOOLS.items()
 ]
+MCP_TOOLS_CATALOG += [
+    _tool(
+        "autopatch_static_audit",
+        "0",
+        "Unavailable until target source acquisition and verified patch generation exist; no invented diagnostic",
+        {"target": "string"},
+        ["target"],
+    ),
+    _tool(
+        "autopatch_unlock_bundle",
+        "0",
+        "Unavailable until a genuine target-bound bundle passes verification; no $39 payment requested",
+        {"audit_id": "string"},
+        ["audit_id"],
+    ),
+]
+TOOL_BY_NAME = {t["name"]: t for t in MCP_TOOLS_CATALOG}
 
-TOOL_BY_NAME: Dict[str, Dict[str, Any]] = {t["name"]: t for t in MCP_TOOLS_CATALOG}
 
-
-def get_mcp_tools_list() -> List[Dict[str, Any]]:
-    """Returns MCP-compliant tool descriptors with explicit 2025-06-18 annotations."""
+def get_mcp_tools_list():
     return [
         {
-            "name": t["name"],
-            "title": t["title"],
-            "description": t["description"],
-            "inputSchema": t["inputSchema"],
-            "annotations": t["annotations"],
+            k: v
+            for k, v in t.items()
+            if k in ("name", "title", "description", "inputSchema", "annotations")
         }
         for t in MCP_TOOLS_CATALOG
     ]
 
 
-def execute_canaryguard_sanitize(content: str, url: Optional[str] = None, strict_mode: bool = True) -> Dict[str, Any]:
-    if url:
-        assert_safe_url(url, resolve_dns=True)
-    # Also check if content itself is a single URL or contains an SSRF probe URL when called on URL-like inputs
-    for match in URL_IN_TEXT.findall(content or ""):
-        ok, err, diag = validate_safe_url(match, resolve_dns=False)
-        if not ok:
-            raise SSRFBlockedError(err or "Blocked embedded SSRF URL in prompt payload", url=match, rule=diag.get("rule", "ssrf_embedded"))
-
-    raw = content or ""
-    cleaned = INVISIBLE_CHARS.sub("", raw)
-    norm = unicodedata.normalize("NFKC", cleaned)
-
-    threats: List[str] = []
-    if cleaned != raw:
-        threats.append("concealed_unicode_removed")
-    if ROLE_DELIMITER.search(norm):
-        threats.append("role_delimiter_override")
-    if INSTRUCTION_OVERRIDE.search(norm):
-        threats.append("instruction_override")
-    if WALLET_DRAIN_CMD.search(norm):
-        threats.append("wallet_transfer_command")
-
-    injection_detected = any(
-        t in threats for t in ("role_delimiter_override", "instruction_override", "wallet_transfer_command")
-    )
-    sanitized_text = "" if (injection_detected and strict_mode) else ROLE_DELIMITER.sub("", cleaned).strip()
-    risk_score = 0.96 if injection_detected else (0.2 if threats else 0.0)
-
-    return {
-        "status": "blocked" if (injection_detected and strict_mode) else ("sanitized" if threats else "clean"),
-        "service": "canaryguard-402",
-        "injection_detected": injection_detected,
-        "risk_score": risk_score,
-        "threats_neutralized": threats,
-        "sanitized_content": sanitized_text,
-        "safe_to_persist": not injection_detected,
-        "safety_receipt": "canary-v2-verified",
-    }
+class InputValidationError(ValueError):
+    pass
 
 
-def execute_tool_call(tool_name: str, arguments: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    """Executes any of the 15 unified MCP tools deterministically with strict SSRF validation."""
-    args = arguments or {}
+def normalize_arguments(name, arguments, *, query_strings=False):
+    if not isinstance(name, str) or name not in TOOL_BY_NAME:
+        raise InputValidationError("Unknown tool")
+    if not isinstance(arguments, dict):
+        raise InputValidationError("arguments must be a JSON object")
+    args = dict(arguments)
+    if (
+        name in ("tollbooth_smart_router", "tollbooth_arbitrage_scan")
+        and "amount" in args
+    ):
+        value = args["amount"]
+        if isinstance(value, int) and not isinstance(value, bool):
+            value = str(value)
+        if (
+            not isinstance(value, str)
+            or len(value) > 128
+            or not re.fullmatch(r"(?:0|[1-9]\d*)(?:\.\d+)?", value)
+            or Decimal(value) <= 0
+        ):
+            raise InputValidationError(
+                "amount must be a positive exact decimal string; floating-point amounts are unsupported"
+            )
+        args["amount"] = value
+    if name == "tollbooth_smart_router":
+        for old, new in (("token_in", "tokenIn"), ("token_out", "tokenOut")):
+            if old in args:
+                if new in args and args[old] != args[new]:
+                    raise InputValidationError("Conflicting token aliases")
+                args[new] = args.pop(old)
+    if name == "canaryguard_audit_mcp_schema" and "tools" in args:
+        tools = args.pop("tools")
+        if (
+            not isinstance(tools, list)
+            or len(tools) != 1
+            or not isinstance(tools[0], dict)
+        ):
+            raise InputValidationError("Only one MCP tool per purchase is supported")
+        tool = tools[0]
+        converted = {
+            "tool_name": tool.get("name"),
+            "input_schema": tool.get("inputSchema", {}),
+        }
+        if tool.get("description"):
+            converted["tool_description"] = tool["description"]
+        for key, value in converted.items():
+            if key in args and args[key] != value:
+                raise InputValidationError("Conflicting MCP tool definitions")
+            args[key] = value
+    if name == "canaryguard_verify_eip712" and "typed_data" not in args:
+        if set(args) == {"domain", "types", "primaryType", "message"}:
+            args = {"typed_data": args}
+        else:
+            raise InputValidationError(
+                "typed_data needs domain/types/primaryType/message"
+            )
+    schema = TOOL_BY_NAME[name]["inputSchema"]
+    unknown = set(args) - set(schema["properties"])
+    if unknown:
+        raise InputValidationError(
+            "Unsupported arguments: " + ", ".join(sorted(unknown))
+        )
+    for key in schema["required"]:
+        if key not in args:
+            raise InputValidationError("Missing required " + key)
+    for key, value in list(args.items()):
+        kind = schema["properties"][key]["type"]
+        if query_strings and isinstance(value, str):
+            if kind == "boolean" and value in ("true", "false"):
+                value = value == "true"
+            elif kind in ("number", "integer"):
+                try:
+                    value = int(value) if kind == "integer" else float(value)
+                except ValueError:
+                    pass
+        valid = (
+            (kind == "string" and isinstance(value, str) and bool(value.strip()))
+            or (kind == "object" and isinstance(value, dict))
+            or (kind == "boolean" and isinstance(value, bool))
+            or (
+                kind in ("number", "integer")
+                and isinstance(value, (int, float))
+                and not isinstance(value, bool)
+                and (kind != "integer" or isinstance(value, int))
+            )
+        )
+        if not valid:
+            raise InputValidationError(f"Invalid {key}: expected {kind}")
+        if kind in ("number", "integer") and (
+            not Decimal(str(value)).is_finite() or value < 0
+        ):
+            raise InputValidationError("Invalid numeric " + key)
+        args[key] = value
+    if "url" in args:
+        assert_safe_url(args["url"], resolve_dns=True)
+    if name == "canaryguard_verify_eip712" and not all(
+        k in args["typed_data"] for k in ("domain", "types", "primaryType", "message")
+    ):
+        raise InputValidationError("Incomplete typed_data")
+    if name == "tollbooth_ai_intel" and not (
+        args.get("prompt") or args.get("contractAddress")
+    ):
+        raise InputValidationError("prompt or contractAddress is required")
+    if name == "rugshield_simulate_honeypot":
+        if args.get("simulate_sell") is False:
+            raise InputValidationError("This tool requires buy/sell simulation")
+        args["simulate_sell"] = True
+    return args
 
-    # Check any URL field across all tools for SSRF first
-    for url_key in ("url", "server_url", "target_url", "webhook_url", "endpoint"):
-        if args.get(url_key):
-            assert_safe_url(str(args[url_key]), resolve_dns=True)
 
-    if tool_name == "canaryguard_sanitize_prompt":
-        return execute_canaryguard_sanitize(
-            content=str(args.get("content", "")),
-            url=args.get("url"),
-            strict_mode=bool(args.get("strict_mode", True)),
+PASS_RESPONSE_HEADERS = {
+    "payment-required",
+    "x-payment-required",
+    "x-402-payment-required",
+    "payment-response",
+    "payment-receipt",
+    "www-authenticate",
+    "retry-after",
+    "x-402-version",
+    "x-free-trial-remaining",
+    "x-trial-notice",
+    "location",
+}
+
+
+async def proxy_tool_call(name, arguments, payment_header=None, *, query_strings=False):
+    args = normalize_arguments(name, arguments, query_strings=query_strings)
+    if name not in UPSTREAM_TOOLS:
+        return (
+            503,
+            {},
+            {
+                "error": "VERIFIED_PATCH_UNAVAILABLE",
+                "payment_collected": False,
+                "message": "Target source acquisition and verified patch generation are unavailable; no payment requested",
+            },
+        )
+    headers = {"Accept": "application/json"}
+    if payment_header:
+        if not isinstance(payment_header, str) or len(payment_header) > 32768:
+            raise InputValidationError("Invalid payment header size")
+        headers["PAYMENT-SIGNATURE"] = payment_header
+    try:
+        # Exactly one upstream attempt. Never retry a possibly settled payment or follow redirects.
+        async with httpx.AsyncClient(
+            timeout=httpx.Timeout(75, connect=15),
+            follow_redirects=False,
+            trust_env=False,
+        ) as client:
+            async with client.stream(
+                "POST", UPSTREAM_TOOLS[name][0], json=args, headers=headers
+            ) as response:
+                chunks = []
+                size = 0
+                async for chunk in response.aiter_bytes():
+                    size += len(chunk)
+                    if size > 2097152:
+                        raise ValueError("Upstream response too large")
+                    chunks.append(chunk)
+                body = json.loads(b"".join(chunks))
+                if not isinstance(body, dict):
+                    raise ValueError("Upstream must return a JSON object")
+                response_headers = {
+                    k: v
+                    for k, v in response.headers.items()
+                    if k.lower() in PASS_RESPONSE_HEADERS
+                }
+                return response.status_code, response_headers, body
+    except (httpx.HTTPError, ValueError):
+        if payment_header:
+            return (
+                503,
+                {},
+                {
+                    "error": "SETTLEMENT_PENDING_RECONCILIATION",
+                    "message": "Upstream outcome unknown. Reuse the identical authorization and request; do not pay again",
+                },
+            )
+        return (
+            503,
+            {},
+            {
+                "error": "UPSTREAM_UNAVAILABLE",
+                "payment_collected": False,
+                "message": "Canonical provider unavailable",
+            },
         )
 
-    if tool_name == "canaryguard_audit_mcp_schema":
-        tools_in = args.get("tools") if isinstance(args.get("tools"), list) else []
-        missing_annotations = [
-            t.get("name", f"tool_{i}")
-            for i, t in enumerate(tools_in)
-            if isinstance(t, dict) and not isinstance(t.get("annotations"), dict)
-        ]
-        return {
-            "status": "success",
-            "service": "canaryguard-402",
-            "tool": tool_name,
-            "tools_audited": len(tools_in),
-            "missing_2025_06_18_annotations": missing_annotations,
-            "compliant": len(missing_annotations) == 0,
-            "score": 100 if not missing_annotations else max(40, 100 - len(missing_annotations) * 15),
-            "recommendation": "Attach explicit readOnlyHint, destructiveHint, idempotentHint, and openWorldHint annotations.",
-        }
 
-    if tool_name == "canaryguard_verify_eip712":
-        primary_type = str(args.get("primaryType", "TransferWithAuthorization"))
-        domain = args.get("domain") if isinstance(args.get("domain"), dict) else {}
-        msg = args.get("message") if isinstance(args.get("message"), dict) else {}
-        to_addr = str(msg.get("to") or msg.get("spender") or "")
-        is_burn = to_addr.lower() in ("0x0000000000000000000000000000000000000000", "0x000000000000000000000000000000000000dead")
-        return {
-            "status": "success",
-            "service": "canaryguard-402",
-            "tool": tool_name,
-            "primaryType": primary_type,
-            "domain_chain_id": domain.get("chainId", 8453),
-            "verdict": "BLOCK" if is_burn else "SAFE",
-            "risk_score": 0.95 if is_burn else 0.04,
-            "safety_receipt": "eip712-canary-v2-verified",
-        }
-
-    if tool_name == "stealthguard_sanitize_url":
-        target_url = str(args.get("url", "https://example.com"))
-        diag = assert_safe_url(target_url, resolve_dns=True)
-        sample_md = f"# Sanitized Snapshot ({diag['hostname']})\nVerified clean DOM extraction via StealthGuard SSRF-hardened proxy."
-        receipt = execute_canaryguard_sanitize(sample_md, strict_mode=bool(args.get("strict_mode", True)))
-        return {
-            "status": "success",
-            "service": "stealthguard-402",
-            "tool": tool_name,
-            "url": target_url,
-            "ssrf_check": "PASSED",
-            "resolved_host": diag["hostname"],
-            "token_compressed_markdown": sample_md,
-            "canaryguard_receipt": receipt,
-        }
-
-    if tool_name == "stealthguard_polymarket_whale_radar":
-        cat = str(args.get("category") or "crypto")
-        return {
-            "status": "success",
-            "service": "stealthguard-402",
-            "tool": tool_name,
-            "category": cat,
-            "markets_scanned": int(args.get("limit", 5)),
-            "whale_divergence_alerts": [
-                {
-                    "market": "ETH above $4,000 by Q4",
-                    "volume_24hr_usd": 1420500.0,
-                    "liquidity_usd": 410000.0,
-                    "volume_to_liquidity_ratio": 3.46,
-                    "orderbook_imbalance": 0.74,
-                    "alpha_rating": "HIGH_WHALE_DIVERGENCE",
-                }
-            ],
-            "safety_receipt": "canary-v2-verified",
-        }
-
-    if tool_name == "stealthguard_odds_divergence":
-        asset = str(args.get("asset") or "ETH").upper()
-        return {
-            "status": "success",
-            "service": "stealthguard-402",
-            "tool": tool_name,
-            "asset": asset,
-            "polymarket_implied_prob": 0.64,
-            "perps_funding_implied_prob": 0.57,
-            "divergence_bps": 700,
-            "signal": "BULLISH_PREDICTION_LEAD",
-        }
-
-    if tool_name == "rugshield_scan_token":
-        token_address = str(args.get("token_address", "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913")).strip()
-        chain = str(args.get("chain", "base")).lower()
-        return {
-            "status": "success",
-            "service": "rugshield-402",
-            "tool": tool_name,
-            "chain": chain,
-            "token_address": token_address,
-            "verdict": "TRUST",
-            "honeypot_risk": False,
-            "detected_honeypot_selectors": [],
-            "liquidity_usd": 48500000.0,
-            "risk_score": 0.02,
-        }
-
-    if tool_name == "rugshield_simulate_honeypot":
-        token_address = str(args.get("token_address", "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913")).strip()
-        return {
-            "status": "success",
-            "service": "rugshield-402",
-            "tool": tool_name,
-            "token_address": token_address,
-            "simulation_passed": True,
-            "buy_tax_bps": 0,
-            "sell_tax_bps": 0,
-            "transfer_blocked": False,
-            "verdict": "SAFE_TO_SWAP",
-        }
-
-    if tool_name == "rugshield_sybil_cluster_map":
-        token_address = str(args.get("token_address", "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913")).strip()
-        return {
-            "status": "success",
-            "service": "rugshield-402",
-            "tool": tool_name,
-            "token_address": token_address,
-            "sybil_clusters_detected": 0,
-            "top_10_holder_pct": 18.4,
-            "lp_locked": True,
-            "verdict": "DECENTRALIZED_DISTRIBUTION",
-        }
-
-    if tool_name == "tollbooth_ai_intel":
-        return {
-            "status": "success",
-            "service": "x402-agent-tollbooth",
-            "tool": tool_name,
-            "contractAddress": args.get("contractAddress", "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"),
-            "intel": "No honeypot or critical logic vulnerabilities detected. Safe for autonomous agent execution.",
-            "score": 98,
-            "verified_by": "CanaryGuard",
-        }
-
-    if tool_name == "tollbooth_arbitrage_scan":
-        return {
-            "status": "success",
-            "service": "x402-agent-tollbooth",
-            "tool": tool_name,
-            "pair": args.get("pair", "WETH/USDC"),
-            "pairs_scanned": 42,
-            "profitable_routes": 2,
-            "top_route": "WETH -> USDC -> AERO (Aerodrome -> Uniswap V3)",
-            "net_spread_bps": 14,
-        }
-
-    if tool_name == "tollbooth_smart_router":
-        return {
-            "status": "success",
-            "service": "x402-agent-tollbooth",
-            "tool": tool_name,
-            "tokenIn": args.get("tokenIn", "USDC"),
-            "tokenOut": args.get("tokenOut", "WETH"),
-            "optimal_dex": "Aerodrome Slipstream",
-            "expected_slippage_bps": 3,
-            "gas_estimate_gwei": 0.008,
-        }
-
-    if tool_name == "tollbooth_contract_audit":
-        addr = str(args.get("contractAddress", "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"))
-        return {
-            "status": "success",
-            "service": "x402-agent-tollbooth",
-            "tool": tool_name,
-            "contractAddress": addr,
-            "vulnerabilities": [],
-            "score": 96,
-            "audit": "Contract verified on Base Mainnet. No malicious reentrancy or unguarded minting privileges detected.",
-        }
-
-    if tool_name == "autopatch_static_audit":
-        target = str(args.get("target", "https://github.com/modelcontextprotocol/servers"))
-        res = audit_target(target)
-        return {
-            "status": "success",
-            "service": "guard402-autopatch-vault",
-            "tool": tool_name,
-            "audit_id": res["audit_id"],
-            "scorecard": res["scorecard"],
-            "unlock_url": res["scorecard"]["unlock_url"],
-            "price_usdc": AUTOPATCH_PRICE_USD,
-        }
-
-    if tool_name == "autopatch_unlock_bundle":
-        audit_id = str(args.get("audit_id", "")).strip()
-        entry = get_vault_entry(audit_id)
-        if not entry:
-            entry = audit_target("https://github.com/modelcontextprotocol/servers")
-        return {
-            "status": "payment_required_for_full_diff",
-            "service": "guard402-autopatch-vault",
-            "tool": tool_name,
-            "audit_id": entry["audit_id"],
-            "scorecard": entry["scorecard"],
-            "unlock_url": f"/v1/unlock-patch/{entry['audit_id']}",
-            "price_usdc": AUTOPATCH_PRICE_USD,
-        }
-
-    raise KeyError(f"Unknown MCP tool '{tool_name}'")
+def execute_tool_call(*_args, **_kwargs):
+    raise RuntimeError("Local fallback engines removed; use async proxy_tool_call")
