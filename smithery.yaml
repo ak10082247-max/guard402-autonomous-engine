@@ -5,7 +5,7 @@ startCommand:
     properties:
       payoutWalletAddress:
         type: string
-        default: "0x73279fa4BadA7CAC888c62CDa4f5c8104765f6f1"
+        default: "0x80E0Ae84679b7f11bE171DaADd492FBECf628cd6"
         description: "Base Mainnet USDC Payout Treasury Address"
   exampleConfig:
-    payoutWalletAddress: "0x73279fa4BadA7CAC888c62CDa4f5c8104765f6f1"
+    payoutWalletAddress: "0x80E0Ae84679b7f11bE171DaADd492FBECf628cd6"
