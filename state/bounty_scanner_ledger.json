@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-29T05:23:38+00:00",
+  "updated_at": "2026-10-29T12:45:04+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -417,12 +417,77 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-29T05:23:37+00:00"
+    },
+    "github:nuetzliches/devstack": {
+      "audit_id": "audit-github-nuetzliches-devstack-497a3a40e7",
+      "target_name": "nuetzliches/devstack",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/nuetzliches/devstack",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nuetzliches-devstack-497a3a40e7",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/19",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T12:44:54+00:00"
+    },
+    "github:outcast1000/viboplr": {
+      "audit_id": "audit-github-outcast1000-viboplr-306af3ff80",
+      "target_name": "outcast1000/viboplr",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/outcast1000/viboplr",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-outcast1000-viboplr-306af3ff80",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/20",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T12:44:57+00:00"
+    },
+    "github:formhaus-dev/formhaus": {
+      "audit_id": "audit-github-formhaus-dev-formhaus-f7fc7ddee0",
+      "target_name": "formhaus-dev/formhaus",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/formhaus-dev/formhaus",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-formhaus-dev-formhaus-f7fc7ddee0",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/21",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T12:45:01+00:00"
+    },
+    "base:0x88e6113f381134df60d6373423c9bd455ed6f53f": {
+      "audit_id": "audit-base-0x88e6113f381134df60d63-8ac997c830",
+      "target_name": "BeaconProxy (0x88E6113f...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x88E6113f381134Df60D6373423C9Bd455ED6F53f#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x88e6113f381134df60d63-8ac997c830",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T12:45:02+00:00"
+    },
+    "base:0x9554b9d9413ee636f5d2383ca2af26bbe9f3264f": {
+      "audit_id": "audit-base-0x9554b9d9413ee636f5d23-34acdda541",
+      "target_name": "BeaconProxy (0x9554b9d9...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x9554b9d9413Ee636f5D2383cA2Af26BBE9f3264F#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x9554b9d9413ee636f5d23-34acdda541",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T12:45:03+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
     "2026-10-28": 12,
-    "2026-10-29": 4
+    "2026-10-29": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -625,6 +690,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-obsei-obsei-c24a2f28fd",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-29T05:23:38+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-29T12:45:04+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-nuetzliches-devstack-497a3a40e7",
+        "audit-github-outcast1000-viboplr-306af3ff80",
+        "audit-github-formhaus-dev-formhaus-f7fc7ddee0",
+        "audit-base-0x88e6113f381134df60d63-8ac997c830",
+        "audit-base-0x9554b9d9413ee636f5d23-34acdda541"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nuetzliches-devstack-497a3a40e7",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-outcast1000-viboplr-306af3ff80",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-formhaus-dev-formhaus-f7fc7ddee0",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x88e6113f381134df60d63-8ac997c830",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x9554b9d9413ee636f5d23-34acdda541"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/19",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/20",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/21"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-nuetzliches-devstack-497a3a40e7",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-29T12:45:04+00:00"
       }
     }
   ]
