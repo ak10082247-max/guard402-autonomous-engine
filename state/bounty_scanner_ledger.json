@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-29T12:45:04+00:00",
+  "updated_at": "2026-10-29T22:39:21+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -482,12 +482,77 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-29T12:45:03+00:00"
+    },
+    "github:inchwormz/iter0-mcp": {
+      "audit_id": "audit-github-inchwormz-iter0-mcp-daebca915a",
+      "target_name": "inchwormz/iter0-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/inchwormz/iter0-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-inchwormz-iter0-mcp-daebca915a",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/22",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T22:39:10+00:00"
+    },
+    "github:iberi22/xavier": {
+      "audit_id": "audit-github-iberi22-xavier-56f392bac3",
+      "target_name": "iberi22/xavier",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/iberi22/xavier",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-iberi22-xavier-56f392bac3",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/23",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T22:39:13+00:00"
+    },
+    "github:richarvey/omnimem": {
+      "audit_id": "audit-github-richarvey-omnimem-9fac27048b",
+      "target_name": "richarvey/OmniMem",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/richarvey/OmniMem",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-richarvey-omnimem-9fac27048b",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/24",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T22:39:17+00:00"
+    },
+    "base:0x0fb3e5b85fd73b4926c119e4e57483443a49ab57": {
+      "audit_id": "audit-base-0x0fb3e5b85fd73b4926c11-f189cc7657",
+      "target_name": "SafeProxy (0x0Fb3e5B8...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x0Fb3e5B85FD73b4926C119e4E57483443A49AB57#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x0fb3e5b85fd73b4926c11-f189cc7657",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T22:39:18+00:00"
+    },
+    "base:0xb37089aa2f4e98a53b509971e152e215b152b1ae": {
+      "audit_id": "audit-base-0xb37089aa2f4e98a53b509-34aeafbb2d",
+      "target_name": "SafeProxy (0xB37089aA...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xB37089aA2f4e98A53B509971E152e215B152b1Ae#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb37089aa2f4e98a53b509-34aeafbb2d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T22:39:20+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
     "2026-10-28": 12,
-    "2026-10-29": 8
+    "2026-10-29": 12
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -723,6 +788,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-nuetzliches-devstack-497a3a40e7",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-29T12:45:04+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-29T22:39:21+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-inchwormz-iter0-mcp-daebca915a",
+        "audit-github-iberi22-xavier-56f392bac3",
+        "audit-github-richarvey-omnimem-9fac27048b",
+        "audit-base-0x0fb3e5b85fd73b4926c11-f189cc7657",
+        "audit-base-0xb37089aa2f4e98a53b509-34aeafbb2d"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-inchwormz-iter0-mcp-daebca915a",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-iberi22-xavier-56f392bac3",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-richarvey-omnimem-9fac27048b",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x0fb3e5b85fd73b4926c11-f189cc7657",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb37089aa2f4e98a53b509-34aeafbb2d"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/22",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/23",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/24"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-inchwormz-iter0-mcp-daebca915a",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-29T22:39:21+00:00"
       }
     }
   ]
