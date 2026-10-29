@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-28T22:27:45+00:00",
+  "updated_at": "2026-10-29T05:23:38+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -352,11 +352,77 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-28T22:27:43+00:00"
+    },
+    "github:obsei/obsei": {
+      "audit_id": "audit-github-obsei-obsei-c24a2f28fd",
+      "target_name": "obsei/obsei",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/obsei/obsei",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-obsei-obsei-c24a2f28fd",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/16",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T05:23:27+00:00"
+    },
+    "github:pipeworx-io/mcp-opencages": {
+      "audit_id": "audit-github-pipeworx-io-mcp-openc-74c71e7244",
+      "target_name": "pipeworx-io/mcp-opencages",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/pipeworx-io/mcp-opencages",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-pipeworx-io-mcp-openc-74c71e7244",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/17",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T05:23:30+00:00"
+    },
+    "github:pipeworx-io/mcp-openbeautyfacts": {
+      "audit_id": "audit-github-pipeworx-io-mcp-openb-fc9a602340",
+      "target_name": "pipeworx-io/mcp-openbeautyfacts",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/pipeworx-io/mcp-openbeautyfacts",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-pipeworx-io-mcp-openb-fc9a602340",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/18",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-29T05:23:34+00:00"
+    },
+    "base:0x67b8e3a7d0f09e41dcf4364653887daea1612104": {
+      "audit_id": "audit-base-0x67b8e3a7d0f09e41dcf43-1ddcc4e309",
+      "target_name": "BeaconProxy (0x67b8e3A7...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x67b8e3A7D0f09e41dcF4364653887daEA1612104#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x67b8e3a7d0f09e41dcf43-1ddcc4e309",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T05:23:35+00:00"
+    },
+    "base:0x04ede418ee3d87168a548e4971c5e3c30fac9bf3": {
+      "audit_id": "audit-base-0x04ede418ee3d87168a548-aea3fe2833",
+      "target_name": "ERC1967Proxy (0x04EdE418...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x04EdE418ee3d87168A548e4971C5E3C30faC9bF3#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x04ede418ee3d87168a548-aea3fe2833",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-29T05:23:37+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
-    "2026-10-28": 12
+    "2026-10-28": 12,
+    "2026-10-29": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -526,6 +592,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-brewingcoder-outpost2-6204eabc10",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-28T22:27:45+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-29T05:23:38+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-obsei-obsei-c24a2f28fd",
+        "audit-github-pipeworx-io-mcp-openc-74c71e7244",
+        "audit-github-pipeworx-io-mcp-openb-fc9a602340",
+        "audit-base-0x67b8e3a7d0f09e41dcf43-1ddcc4e309",
+        "audit-base-0x04ede418ee3d87168a548-aea3fe2833"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-obsei-obsei-c24a2f28fd",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-pipeworx-io-mcp-openc-74c71e7244",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-pipeworx-io-mcp-openb-fc9a602340",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x67b8e3a7d0f09e41dcf43-1ddcc4e309",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x04ede418ee3d87168a548-aea3fe2833"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/16",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/17",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/18"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-obsei-obsei-c24a2f28fd",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-29T05:23:38+00:00"
       }
     }
   ]
