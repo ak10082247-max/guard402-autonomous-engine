@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-30T12:36:57+00:00",
+  "updated_at": "2026-10-30T22:10:27+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -677,13 +677,78 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-30T12:36:56+00:00"
+    },
+    "github:deke1yahav/agents-hive": {
+      "audit_id": "audit-github-deke1yahav-agents-hiv-6b10dfdcde",
+      "target_name": "Deke1Yahav/agents-hive",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Deke1Yahav/agents-hive",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-deke1yahav-agents-hiv-6b10dfdcde",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/31",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T22:10:17+00:00"
+    },
+    "github:zwznco/camberstack-mcp": {
+      "audit_id": "audit-github-zwznco-camberstack-mc-5dab6edee2",
+      "target_name": "zwznco/camberstack-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/zwznco/camberstack-mcp",
+      "score": 68,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-zwznco-camberstack-mc-5dab6edee2",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/32",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T22:10:21+00:00"
+    },
+    "github:nuguardai/nuguard": {
+      "audit_id": "audit-github-nuguardai-nuguard-6746be6b7a",
+      "target_name": "NuGuardAI/nuguard",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/NuGuardAI/nuguard",
+      "score": 60,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nuguardai-nuguard-6746be6b7a",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/33",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T22:10:24+00:00"
+    },
+    "base:0x7dd629395a4f47109a91969efe7bc1df3f108338": {
+      "audit_id": "audit-base-0x7dd629395a4f47109a919-b61b5163e2",
+      "target_name": "ERC1967Proxy (0x7DD62939...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x7DD629395A4F47109A91969eFE7Bc1DF3F108338#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x7dd629395a4f47109a919-b61b5163e2",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-30T22:10:25+00:00"
+    },
+    "base:0xf093043144358c7f2458fab179a5fb7af5601248": {
+      "audit_id": "audit-base-0xf093043144358c7f2458f-134496297d",
+      "target_name": "SafeProxy (0xF0930431...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xF093043144358C7f2458faB179A5fB7Af5601248#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf093043144358c7f2458f-134496297d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-30T22:10:26+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
     "2026-10-28": 12,
     "2026-10-29": 12,
-    "2026-10-30": 8
+    "2026-10-30": 12
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1018,6 +1083,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-serionist-omniverse-m-a380036686",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-30T12:36:57+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-30T22:10:27+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-deke1yahav-agents-hiv-6b10dfdcde",
+        "audit-github-zwznco-camberstack-mc-5dab6edee2",
+        "audit-github-nuguardai-nuguard-6746be6b7a",
+        "audit-base-0x7dd629395a4f47109a919-b61b5163e2",
+        "audit-base-0xf093043144358c7f2458f-134496297d"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-deke1yahav-agents-hiv-6b10dfdcde",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-zwznco-camberstack-mc-5dab6edee2",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nuguardai-nuguard-6746be6b7a",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x7dd629395a4f47109a919-b61b5163e2",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf093043144358c7f2458f-134496297d"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/31",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/32",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/33"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-deke1yahav-agents-hiv-6b10dfdcde",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-30T22:10:27+00:00"
       }
     }
   ]
