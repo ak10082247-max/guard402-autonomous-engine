@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-30T05:23:08+00:00",
+  "updated_at": "2026-10-30T12:36:57+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -612,13 +612,78 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-30T05:23:07+00:00"
+    },
+    "github:serionist/omniverse-mcp": {
+      "audit_id": "audit-github-serionist-omniverse-m-a380036686",
+      "target_name": "serionist/omniverse-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/serionist/omniverse-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-serionist-omniverse-m-a380036686",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/28",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T12:36:47+00:00"
+    },
+    "github:kintopp/globalise-mcp": {
+      "audit_id": "audit-github-kintopp-globalise-mcp-e78278b390",
+      "target_name": "kintopp/globalise-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/kintopp/globalise-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-kintopp-globalise-mcp-e78278b390",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/29",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T12:36:51+00:00"
+    },
+    "github:triggerdotdev/trigger.dev": {
+      "audit_id": "audit-github-triggerdotdev-trigger-ff5a8ff99a",
+      "target_name": "triggerdotdev/trigger.dev",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/triggerdotdev/trigger.dev",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-triggerdotdev-trigger-ff5a8ff99a",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/30",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-30T12:36:54+00:00"
+    },
+    "base:0x9b8f1b7f0a37f94c10102b766c729c5010d5bc63": {
+      "audit_id": "audit-base-0x9b8f1b7f0a37f94c10102-3c8e909a9f",
+      "target_name": "SafeProxy (0x9B8f1B7f...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x9B8f1B7f0a37F94C10102B766c729c5010d5bC63#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x9b8f1b7f0a37f94c10102-3c8e909a9f",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-30T12:36:55+00:00"
+    },
+    "base:0x3b61fa97856d5349916761fe75b29286948d3b56": {
+      "audit_id": "audit-base-0x3b61fa97856d534991676-6aaa7b7f19",
+      "target_name": "SafeProxy (0x3B61fa97...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x3B61fa97856D5349916761fe75B29286948d3B56#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x3b61fa97856d534991676-6aaa7b7f19",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-30T12:36:56+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
     "2026-10-28": 12,
     "2026-10-29": 12,
-    "2026-10-30": 4
+    "2026-10-30": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -920,6 +985,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-kitepon-aiterm-mcp-08dab7e45c",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-30T05:23:08+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-30T12:36:57+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-serionist-omniverse-m-a380036686",
+        "audit-github-kintopp-globalise-mcp-e78278b390",
+        "audit-github-triggerdotdev-trigger-ff5a8ff99a",
+        "audit-base-0x9b8f1b7f0a37f94c10102-3c8e909a9f",
+        "audit-base-0x3b61fa97856d534991676-6aaa7b7f19"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-serionist-omniverse-m-a380036686",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-kintopp-globalise-mcp-e78278b390",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-triggerdotdev-trigger-ff5a8ff99a",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x9b8f1b7f0a37f94c10102-3c8e909a9f",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x3b61fa97856d534991676-6aaa7b7f19"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/28",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/29",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/30"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-serionist-omniverse-m-a380036686",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-30T12:36:57+00:00"
       }
     }
   ]
