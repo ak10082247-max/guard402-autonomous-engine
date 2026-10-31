@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-31T12:02:56+00:00",
+  "updated_at": "2026-10-31T21:19:22+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -872,6 +872,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-31T12:02:55+00:00"
+    },
+    "github:cavi-ai/ableton-mcp": {
+      "audit_id": "audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
+      "target_name": "cavi-ai/ableton-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/cavi-ai/ableton-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/40",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T21:19:14+00:00"
+    },
+    "github:rul1an/assay": {
+      "audit_id": "audit-github-rul1an-assay-1e6f593fc1",
+      "target_name": "Rul1an/assay",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Rul1an/assay",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rul1an-assay-1e6f593fc1",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/41",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T21:19:16+00:00"
+    },
+    "github:vstorm-co/agenticos": {
+      "audit_id": "audit-github-vstorm-co-agenticos-aeaaeb1660",
+      "target_name": "vstorm-co/agenticos",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/vstorm-co/agenticos",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-vstorm-co-agenticos-aeaaeb1660",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/42",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T21:19:19+00:00"
+    },
+    "base:0x8a56582a73ef8e3c179546b1ba1f40a23433ac31": {
+      "audit_id": "audit-base-0x8a56582a73ef8e3c17954-e63ced15d8",
+      "target_name": "BeaconProxy (0x8A56582a...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x8A56582a73ef8E3C179546B1ba1F40a23433aC31#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x8a56582a73ef8e3c17954-e63ced15d8",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T21:19:20+00:00"
+    },
+    "base:0x4fd44b1f6c4b3ed694a8c6f0da9cfec84d2a6f4c": {
+      "audit_id": "audit-base-0x4fd44b1f6c4b3ed694a8c-6e27de1f06",
+      "target_name": "BeaconProxy (0x4fD44B1F...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x4fD44B1F6C4B3ED694A8c6F0Da9CFec84D2A6F4C#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x4fd44b1f6c4b3ed694a8c-6e27de1f06",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T21:19:22+00:00"
     }
   },
   "daily_email_counts": {
@@ -879,7 +944,7 @@
     "2026-10-28": 12,
     "2026-10-29": 12,
     "2026-10-30": 12,
-    "2026-10-31": 8
+    "2026-10-31": 12
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1313,6 +1378,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-houtini-ai-seo-audit-6d95ba1bd8",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-31T12:02:56+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-31T21:19:22+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
+        "audit-github-rul1an-assay-1e6f593fc1",
+        "audit-github-vstorm-co-agenticos-aeaaeb1660",
+        "audit-base-0x8a56582a73ef8e3c17954-e63ced15d8",
+        "audit-base-0x4fd44b1f6c4b3ed694a8c-6e27de1f06"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rul1an-assay-1e6f593fc1",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-vstorm-co-agenticos-aeaaeb1660",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x8a56582a73ef8e3c17954-e63ced15d8",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x4fd44b1f6c4b3ed694a8c-6e27de1f06"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/40",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/41",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/42"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-31T21:19:22+00:00"
       }
     }
   ]
