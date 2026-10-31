@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-31T05:06:47+00:00",
+  "updated_at": "2026-10-31T12:02:56+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -807,6 +807,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-31T05:06:46+00:00"
+    },
+    "github:houtini-ai/seo-audit": {
+      "audit_id": "audit-github-houtini-ai-seo-audit-6d95ba1bd8",
+      "target_name": "houtini-ai/seo-audit",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/houtini-ai/seo-audit",
+      "score": 68,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-houtini-ai-seo-audit-6d95ba1bd8",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/37",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T12:02:47+00:00"
+    },
+    "github:retospect/precis-mcp": {
+      "audit_id": "audit-github-retospect-precis-mcp-fcd3a07f8c",
+      "target_name": "retospect/precis-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/retospect/precis-mcp",
+      "score": 68,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-retospect-precis-mcp-fcd3a07f8c",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/38",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T12:02:50+00:00"
+    },
+    "github:neeelbhavsar/mcp-skills-hub": {
+      "audit_id": "audit-github-neeelbhavsar-mcp-skil-f9ca42869f",
+      "target_name": "neeelbhavsar/mcp-skills-hub",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/neeelbhavsar/mcp-skills-hub",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-neeelbhavsar-mcp-skil-f9ca42869f",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/39",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T12:02:52+00:00"
+    },
+    "base:0x1412bfaf375cb96a1fca7954365fb8cab3716ae4": {
+      "audit_id": "audit-base-0x1412bfaf375cb96a1fca7-9c5e1691b5",
+      "target_name": "TransparentUpgradeableProxy (0x1412BfAf...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x1412BfAf375cb96a1FCa7954365FB8CAB3716ae4#code",
+      "score": 85,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1412bfaf375cb96a1fca7-9c5e1691b5",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T12:02:54+00:00"
+    },
+    "base:0x12aef8b421e0ca9d55866f5ddd52ac7af3045179": {
+      "audit_id": "audit-base-0x12aef8b421e0ca9d55866-a181c8a4a7",
+      "target_name": "SafeProxy (0x12aEF8B4...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x12aEF8B421E0CA9d55866f5DdD52Ac7Af3045179#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x12aef8b421e0ca9d55866-a181c8a4a7",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T12:02:55+00:00"
     }
   },
   "daily_email_counts": {
@@ -814,7 +879,7 @@
     "2026-10-28": 12,
     "2026-10-29": 12,
     "2026-10-30": 12,
-    "2026-10-31": 4
+    "2026-10-31": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1215,6 +1280,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-darkworldcoder-arguse-309f8f026b",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-31T05:06:47+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-31T12:02:56+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-houtini-ai-seo-audit-6d95ba1bd8",
+        "audit-github-retospect-precis-mcp-fcd3a07f8c",
+        "audit-github-neeelbhavsar-mcp-skil-f9ca42869f",
+        "audit-base-0x1412bfaf375cb96a1fca7-9c5e1691b5",
+        "audit-base-0x12aef8b421e0ca9d55866-a181c8a4a7"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-houtini-ai-seo-audit-6d95ba1bd8",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-retospect-precis-mcp-fcd3a07f8c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-neeelbhavsar-mcp-skil-f9ca42869f",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1412bfaf375cb96a1fca7-9c5e1691b5",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x12aef8b421e0ca9d55866-a181c8a4a7"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/37",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/38",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/39"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-houtini-ai-seo-audit-6d95ba1bd8",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-31T12:02:56+00:00"
       }
     }
   ]
