@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-30T22:10:27+00:00",
+  "updated_at": "2026-10-31T05:06:47+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -742,13 +742,79 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-30T22:10:26+00:00"
+    },
+    "github:darkworldcoder/arguseye": {
+      "audit_id": "audit-github-darkworldcoder-arguse-309f8f026b",
+      "target_name": "DarkWorldCoder/arguseye",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/DarkWorldCoder/arguseye",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-darkworldcoder-arguse-309f8f026b",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/34",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T05:06:38+00:00"
+    },
+    "github:raila81/vorsorge-regeln-mcp": {
+      "audit_id": "audit-github-raila81-vorsorge-rege-aef2152a8d",
+      "target_name": "raila81/vorsorge-regeln-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/raila81/vorsorge-regeln-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-raila81-vorsorge-rege-aef2152a8d",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/35",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T05:06:41+00:00"
+    },
+    "github:agenxy/dibs": {
+      "audit_id": "audit-github-agenxy-dibs-fc9c44eade",
+      "target_name": "Agenxy/dibs",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Agenxy/dibs",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-agenxy-dibs-fc9c44eade",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/36",
+      "smtp_sent": true,
+      "scanned_at": "2026-10-31T05:06:44+00:00"
+    },
+    "base:0x83c494dd7289d7fc9f35f07b090c42f46a8b2e7d": {
+      "audit_id": "audit-base-0x83c494dd7289d7fc9f35f-72bb0b5b5c",
+      "target_name": "BeaconProxy (0x83C494dd...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x83C494dd7289d7FC9f35F07b090c42F46a8b2e7d#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x83c494dd7289d7fc9f35f-72bb0b5b5c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T05:06:44+00:00"
+    },
+    "base:0x5290a19a7aa56cfebe4cb8aba8202122cacc8659": {
+      "audit_id": "audit-base-0x5290a19a7aa56cfebe4cb-425abc3bbf",
+      "target_name": "PancakePair (0x5290A19a...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x5290A19a7aa56cFEBE4CB8aBA8202122CACC8659#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5290a19a7aa56cfebe4cb-425abc3bbf",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-10-31T05:06:46+00:00"
     }
   },
   "daily_email_counts": {
     "2026-10-27": 5,
     "2026-10-28": 12,
     "2026-10-29": 12,
-    "2026-10-30": 12
+    "2026-10-30": 12,
+    "2026-10-31": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1116,6 +1182,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-deke1yahav-agents-hiv-6b10dfdcde",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-30T22:10:27+00:00"
+      }
+    },
+    {
+      "run_at": "2026-10-31T05:06:47+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-darkworldcoder-arguse-309f8f026b",
+        "audit-github-raila81-vorsorge-rege-aef2152a8d",
+        "audit-github-agenxy-dibs-fc9c44eade",
+        "audit-base-0x83c494dd7289d7fc9f35f-72bb0b5b5c",
+        "audit-base-0x5290a19a7aa56cfebe4cb-425abc3bbf"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-darkworldcoder-arguse-309f8f026b",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-raila81-vorsorge-rege-aef2152a8d",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-agenxy-dibs-fc9c44eade",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x83c494dd7289d7fc9f35f-72bb0b5b5c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5290a19a7aa56cfebe4cb-425abc3bbf"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/34",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/35",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/36"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-darkworldcoder-arguse-309f8f026b",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-10-31T05:06:47+00:00"
       }
     }
   ]
