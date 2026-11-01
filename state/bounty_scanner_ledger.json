@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-10-31T21:19:22+00:00",
+  "updated_at": "2026-11-01T05:38:32+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -937,6 +937,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-10-31T21:19:22+00:00"
+    },
+    "github:aureliolo/gdharness": {
+      "audit_id": "audit-github-aureliolo-gdharness-2459d4f5db",
+      "target_name": "Aureliolo/gdharness",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Aureliolo/gdharness",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-aureliolo-gdharness-2459d4f5db",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/43",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T05:38:19+00:00"
+    },
+    "github:ciltress/skyrim-modding-tools-mcp": {
+      "audit_id": "audit-github-ciltress-skyrim-moddi-b3be0f89eb",
+      "target_name": "Ciltress/skyrim-modding-tools-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Ciltress/skyrim-modding-tools-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-ciltress-skyrim-moddi-b3be0f89eb",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/44",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T05:38:25+00:00"
+    },
+    "github:ellmos-ai/ellmos-codecommander-mcp": {
+      "audit_id": "audit-github-ellmos-ai-ellmos-code-e75399b2e1",
+      "target_name": "ellmos-ai/ellmos-codecommander-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/ellmos-ai/ellmos-codecommander-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-ellmos-ai-ellmos-code-e75399b2e1",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/45",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T05:38:28+00:00"
+    },
+    "base:0x2aeafb6aa1236d85185d2acbf6ac7bca5fdf2694": {
+      "audit_id": "audit-base-0x2aeafb6aa1236d85185d2-f3802c7a3d",
+      "target_name": "SimpleStorage (0x2aEAfb6A...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x2aEAfb6AA1236D85185D2AcBF6Ac7bCa5FDf2694#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2aeafb6aa1236d85185d2-f3802c7a3d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-01T05:38:30+00:00"
+    },
+    "base:0x59465c156caf4b46ba5df471270dce7490c2765e": {
+      "audit_id": "audit-base-0x59465c156caf4b46ba5df-e448477317",
+      "target_name": "SafeProxy (0x59465C15...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x59465C156CaF4B46Ba5df471270Dce7490C2765e#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x59465c156caf4b46ba5df-e448477317",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-01T05:38:31+00:00"
     }
   },
   "daily_email_counts": {
@@ -944,7 +1009,8 @@
     "2026-10-28": 12,
     "2026-10-29": 12,
     "2026-10-30": 12,
-    "2026-10-31": 12
+    "2026-10-31": 12,
+    "2026-11-01": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1411,6 +1477,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-cavi-ai-ableton-mcp-2964aa3ea4",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-10-31T21:19:22+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-01T05:38:32+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-aureliolo-gdharness-2459d4f5db",
+        "audit-github-ciltress-skyrim-moddi-b3be0f89eb",
+        "audit-github-ellmos-ai-ellmos-code-e75399b2e1",
+        "audit-base-0x2aeafb6aa1236d85185d2-f3802c7a3d",
+        "audit-base-0x59465c156caf4b46ba5df-e448477317"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-aureliolo-gdharness-2459d4f5db",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-ciltress-skyrim-moddi-b3be0f89eb",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-ellmos-ai-ellmos-code-e75399b2e1",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2aeafb6aa1236d85185d2-f3802c7a3d",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x59465c156caf4b46ba5df-e448477317"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/43",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/44",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/45"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-aureliolo-gdharness-2459d4f5db",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-01T05:38:32+00:00"
       }
     }
   ]
