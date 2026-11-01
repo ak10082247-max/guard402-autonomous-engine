@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-01T13:04:10+00:00",
+  "updated_at": "2026-11-01T21:55:45+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1067,6 +1067,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-01T13:04:10+00:00"
+    },
+    "github:greenbone-hive/openvas-mcp": {
+      "audit_id": "audit-github-greenbone-hive-openva-e17db519b0",
+      "target_name": "greenbone-hive/OpenVAS-MCP",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/greenbone-hive/OpenVAS-MCP",
+      "score": 68,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-greenbone-hive-openva-e17db519b0",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/50",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T21:55:32+00:00"
+    },
+    "github:tony99nyr/open-brx": {
+      "audit_id": "audit-github-tony99nyr-open-brx-72f84ddb13",
+      "target_name": "tony99nyr/open-brx",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/tony99nyr/open-brx",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-tony99nyr-open-brx-72f84ddb13",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/51",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T21:55:38+00:00"
+    },
+    "github:shipped-studio/unsora": {
+      "audit_id": "audit-github-shipped-studio-unsora-f0fab299bf",
+      "target_name": "Shipped-Studio/unsora",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Shipped-Studio/unsora",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-shipped-studio-unsora-f0fab299bf",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/52",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-01T21:55:41+00:00"
+    },
+    "base:0x1e1d586325c0274c7b6550e5622ecf388073a6ee": {
+      "audit_id": "audit-base-0x1e1d586325c0274c7b655-1f26e95e28",
+      "target_name": "ERC1967Proxy (0x1e1d5863...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x1e1d586325C0274c7B6550E5622ECf388073A6ee#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1e1d586325c0274c7b655-1f26e95e28",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-01T21:55:43+00:00"
+    },
+    "base:0x5b23d1d6fb4fb9814a784d45d1bb91f56ce45c43": {
+      "audit_id": "audit-base-0x5b23d1d6fb4fb9814a784-a8d057f9f6",
+      "target_name": "SafeProxy (0x5b23d1D6...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x5b23d1D6fB4FB9814a784D45D1Bb91f56Ce45c43#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5b23d1d6fb4fb9814a784-a8d057f9f6",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-01T21:55:44+00:00"
     }
   },
   "daily_email_counts": {
@@ -1075,7 +1140,7 @@
     "2026-10-29": 12,
     "2026-10-30": 12,
     "2026-10-31": 12,
-    "2026-11-01": 8
+    "2026-11-01": 12
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1608,6 +1673,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-m4cd4r4-portpilot-14b167f609",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-01T13:04:10+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-01T21:55:45+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-greenbone-hive-openva-e17db519b0",
+        "audit-github-tony99nyr-open-brx-72f84ddb13",
+        "audit-github-shipped-studio-unsora-f0fab299bf",
+        "audit-base-0x1e1d586325c0274c7b655-1f26e95e28",
+        "audit-base-0x5b23d1d6fb4fb9814a784-a8d057f9f6"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-greenbone-hive-openva-e17db519b0",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-tony99nyr-open-brx-72f84ddb13",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-shipped-studio-unsora-f0fab299bf",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x1e1d586325c0274c7b655-1f26e95e28",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5b23d1d6fb4fb9814a784-a8d057f9f6"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/50",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/51",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/52"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-greenbone-hive-openva-e17db519b0",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-01T21:55:45+00:00"
       }
     }
   ]
