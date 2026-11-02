@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-02T05:36:33+00:00",
+  "updated_at": "2026-11-02T15:27:26+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1197,6 +1197,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-02T05:36:32+00:00"
+    },
+    "github:nimblebraininc/nimblebrain": {
+      "audit_id": "audit-github-nimblebraininc-nimble-62d92cf4c6",
+      "target_name": "NimbleBrainInc/nimblebrain",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/NimbleBrainInc/nimblebrain",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nimblebraininc-nimble-62d92cf4c6",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/56",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T15:27:03+00:00"
+    },
+    "github:n8n-io/n8n": {
+      "audit_id": "audit-github-n8n-io-n8n-ac7ba171be",
+      "target_name": "n8n-io/n8n",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/n8n-io/n8n",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-n8n-io-n8n-ac7ba171be",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/57",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T15:27:19+00:00"
+    },
+    "github:grunion-ai/weave": {
+      "audit_id": "audit-github-grunion-ai-weave-44be002312",
+      "target_name": "grunion-ai/weave",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/grunion-ai/weave",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-grunion-ai-weave-44be002312",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/58",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T15:27:22+00:00"
+    },
+    "base:0xf654570e66e112866ddd414bc6d297e5a90833b3": {
+      "audit_id": "audit-base-0xf654570e66e112866ddd4-75ae58689e",
+      "target_name": "SafeProxy (0xF654570E...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xF654570E66E112866DdD414bc6D297e5A90833b3#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf654570e66e112866ddd4-75ae58689e",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-02T15:27:23+00:00"
+    },
+    "base:0x00446e6ef37478e4f8991eca95ff80ac79b4b3cd": {
+      "audit_id": "audit-base-0x00446e6ef37478e4f8991-8172dcd82c",
+      "target_name": "SafeProxy (0x00446e6e...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x00446e6eF37478E4F8991eca95Ff80aC79B4B3Cd#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x00446e6ef37478e4f8991-8172dcd82c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-02T15:27:25+00:00"
     }
   },
   "daily_email_counts": {
@@ -1206,7 +1271,7 @@
     "2026-10-30": 12,
     "2026-10-31": 12,
     "2026-11-01": 12,
-    "2026-11-02": 4
+    "2026-11-02": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1805,6 +1870,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-stephaneberthoz-sandf-f9f6a994e1",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-02T05:36:33+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-02T15:27:26+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-nimblebraininc-nimble-62d92cf4c6",
+        "audit-github-n8n-io-n8n-ac7ba171be",
+        "audit-github-grunion-ai-weave-44be002312",
+        "audit-base-0xf654570e66e112866ddd4-75ae58689e",
+        "audit-base-0x00446e6ef37478e4f8991-8172dcd82c"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-nimblebraininc-nimble-62d92cf4c6",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-n8n-io-n8n-ac7ba171be",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-grunion-ai-weave-44be002312",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf654570e66e112866ddd4-75ae58689e",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x00446e6ef37478e4f8991-8172dcd82c"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/56",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/57",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/58"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-nimblebraininc-nimble-62d92cf4c6",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-02T15:27:26+00:00"
       }
     }
   ]
