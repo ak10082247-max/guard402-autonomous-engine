@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-01T21:55:45+00:00",
+  "updated_at": "2026-11-02T05:36:33+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1132,6 +1132,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-01T21:55:44+00:00"
+    },
+    "github:stephaneberthoz/sandforge": {
+      "audit_id": "audit-github-stephaneberthoz-sandf-f9f6a994e1",
+      "target_name": "StephaneBerthoz/sandforge",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/StephaneBerthoz/sandforge",
+      "score": 60,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-stephaneberthoz-sandf-f9f6a994e1",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/53",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T05:36:09+00:00"
+    },
+    "github:arhancanli/canlicapital": {
+      "audit_id": "audit-github-arhancanli-canlicapit-cb8a5dec5a",
+      "target_name": "arhancanli/canlicapital",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/arhancanli/canlicapital",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-arhancanli-canlicapit-cb8a5dec5a",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/54",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T05:36:25+00:00"
+    },
+    "github:package-kr/ccuh": {
+      "audit_id": "audit-github-package-kr-ccuh-45fb86ba28",
+      "target_name": "Package-KR/CCUH",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/Package-KR/CCUH",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-package-kr-ccuh-45fb86ba28",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/55",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-02T05:36:29+00:00"
+    },
+    "base:0xe0004a462b6926e2ca30fac4717a95f1c710ed9a": {
+      "audit_id": "audit-base-0xe0004a462b6926e2ca30f-e7a94ef75c",
+      "target_name": "UniswapV2Pair (0xE0004A46...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xE0004A462b6926e2ca30FaC4717A95f1C710ed9A#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xe0004a462b6926e2ca30f-e7a94ef75c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-02T05:36:30+00:00"
+    },
+    "base:0xbd7563c800f71d45a6115dd7a06b9bf11aa4463f": {
+      "audit_id": "audit-base-0xbd7563c800f71d45a6115-30535cda43",
+      "target_name": "ERC721ACloneForAirdrop (0xbd7563C8...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xbd7563C800F71d45a6115dd7a06b9bF11Aa4463f#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xbd7563c800f71d45a6115-30535cda43",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-02T05:36:32+00:00"
     }
   },
   "daily_email_counts": {
@@ -1140,7 +1205,8 @@
     "2026-10-29": 12,
     "2026-10-30": 12,
     "2026-10-31": 12,
-    "2026-11-01": 12
+    "2026-11-01": 12,
+    "2026-11-02": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -1706,6 +1772,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-greenbone-hive-openva-e17db519b0",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-01T21:55:45+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-02T05:36:33+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-stephaneberthoz-sandf-f9f6a994e1",
+        "audit-github-arhancanli-canlicapit-cb8a5dec5a",
+        "audit-github-package-kr-ccuh-45fb86ba28",
+        "audit-base-0xe0004a462b6926e2ca30f-e7a94ef75c",
+        "audit-base-0xbd7563c800f71d45a6115-30535cda43"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-stephaneberthoz-sandf-f9f6a994e1",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-arhancanli-canlicapit-cb8a5dec5a",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-package-kr-ccuh-45fb86ba28",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xe0004a462b6926e2ca30f-e7a94ef75c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xbd7563c800f71d45a6115-30535cda43"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/53",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/54",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/55"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-stephaneberthoz-sandf-f9f6a994e1",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-02T05:36:33+00:00"
       }
     }
   ]
