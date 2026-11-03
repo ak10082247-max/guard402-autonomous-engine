@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-03T00:51:33+00:00",
+  "updated_at": "2026-11-03T13:58:41+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1327,6 +1327,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-03T00:51:32+00:00"
+    },
+    "github:wentf9/xops-cli": {
+      "audit_id": "audit-github-wentf9-xops-cli-944fefe025",
+      "target_name": "wentf9/xops-cli",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/wentf9/xops-cli",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-wentf9-xops-cli-944fefe025",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/62",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-03T13:58:16+00:00"
+    },
+    "github:dev-nikolas/relic": {
+      "audit_id": "audit-github-dev-nikolas-relic-5112204dcb",
+      "target_name": "dev-nikolas/RELIC",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/dev-nikolas/RELIC",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-dev-nikolas-relic-5112204dcb",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/63",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-03T13:58:34+00:00"
+    },
+    "github:kroqdotdev/webhooks-cc": {
+      "audit_id": "audit-github-kroqdotdev-webhooks-c-a16ac0164c",
+      "target_name": "kroqdotdev/webhooks-cc",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/kroqdotdev/webhooks-cc",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-kroqdotdev-webhooks-c-a16ac0164c",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/64",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-03T13:58:37+00:00"
+    },
+    "base:0xe3b123df885f58c719402fc69d3945a5bfaa14a2": {
+      "audit_id": "audit-base-0xe3b123df885f58c719402-39c6928a7d",
+      "target_name": "FeeMath (0xE3b123dF...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xE3b123dF885f58C719402FC69d3945A5bFAA14a2#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xe3b123df885f58c719402-39c6928a7d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-03T13:58:39+00:00"
+    },
+    "base:0x60d4e6357354b0e6ff1fc763a66a7ed759b79d79": {
+      "audit_id": "audit-base-0x60d4e6357354b0e6ff1fc-c9650eee83",
+      "target_name": "PancakePair (0x60D4E635...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x60D4E6357354B0e6FF1fC763a66A7ED759B79d79#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x60d4e6357354b0e6ff1fc-c9650eee83",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-03T13:58:40+00:00"
     }
   },
   "daily_email_counts": {
@@ -1337,7 +1402,7 @@
     "2026-10-31": 12,
     "2026-11-01": 12,
     "2026-11-02": 8,
-    "2026-11-03": 4
+    "2026-11-03": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2002,6 +2067,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-bythewayz66-glitch-me-1bfbb40229",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-03T00:51:33+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-03T13:58:41+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-wentf9-xops-cli-944fefe025",
+        "audit-github-dev-nikolas-relic-5112204dcb",
+        "audit-github-kroqdotdev-webhooks-c-a16ac0164c",
+        "audit-base-0xe3b123df885f58c719402-39c6928a7d",
+        "audit-base-0x60d4e6357354b0e6ff1fc-c9650eee83"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-wentf9-xops-cli-944fefe025",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-dev-nikolas-relic-5112204dcb",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-kroqdotdev-webhooks-c-a16ac0164c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xe3b123df885f58c719402-39c6928a7d",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x60d4e6357354b0e6ff1fc-c9650eee83"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/62",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/63",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/64"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-wentf9-xops-cli-944fefe025",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-03T13:58:41+00:00"
       }
     }
   ]
