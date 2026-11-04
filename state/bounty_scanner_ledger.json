@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-03T13:58:41+00:00",
+  "updated_at": "2026-11-04T05:52:04+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1392,6 +1392,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-03T13:58:40+00:00"
+    },
+    "github:apogeegit/apogee-mcp": {
+      "audit_id": "audit-github-apogeegit-apogee-mcp-507a63faa9",
+      "target_name": "ApogeeGIT/apogee-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/ApogeeGIT/apogee-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apogeegit-apogee-mcp-507a63faa9",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/68",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T05:51:49+00:00"
+    },
+    "github:manningyangs/ai-shovel-collection": {
+      "audit_id": "audit-github-manningyangs-ai-shove-8080b39ef4",
+      "target_name": "manningyangs/AI-Shovel-Collection",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/manningyangs/AI-Shovel-Collection",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-manningyangs-ai-shove-8080b39ef4",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/69",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T05:51:55+00:00"
+    },
+    "github:rife2/bld": {
+      "audit_id": "audit-github-rife2-bld-f24f86cda2",
+      "target_name": "rife2/bld",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/rife2/bld",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rife2-bld-f24f86cda2",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/70",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T05:51:59+00:00"
+    },
+    "base:0xf1861c609cc99a980aaacd2b4a6f7ce436d442a0": {
+      "audit_id": "audit-base-0xf1861c609cc99a980aaac-cd2201f85c",
+      "target_name": "KumoPals (0xF1861C60...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xF1861C609Cc99A980AAAcd2B4a6f7Ce436D442A0#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf1861c609cc99a980aaac-cd2201f85c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-04T05:52:01+00:00"
+    },
+    "base:0xb2fb543a091610bcc4616740ecdc38d54927ec11": {
+      "audit_id": "audit-base-0xb2fb543a091610bcc4616-188ecad747",
+      "target_name": "SafeProxy (0xb2fb543A...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xb2fb543A091610bCc4616740ecdc38D54927EC11#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb2fb543a091610bcc4616-188ecad747",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-04T05:52:03+00:00"
     }
   },
   "daily_email_counts": {
@@ -1402,7 +1467,8 @@
     "2026-10-31": 12,
     "2026-11-01": 12,
     "2026-11-02": 8,
-    "2026-11-03": 8
+    "2026-11-03": 8,
+    "2026-11-04": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2100,6 +2166,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-wentf9-xops-cli-944fefe025",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-03T13:58:41+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-04T05:52:04+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-apogeegit-apogee-mcp-507a63faa9",
+        "audit-github-manningyangs-ai-shove-8080b39ef4",
+        "audit-github-rife2-bld-f24f86cda2",
+        "audit-base-0xf1861c609cc99a980aaac-cd2201f85c",
+        "audit-base-0xb2fb543a091610bcc4616-188ecad747"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apogeegit-apogee-mcp-507a63faa9",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-manningyangs-ai-shove-8080b39ef4",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-rife2-bld-f24f86cda2",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xf1861c609cc99a980aaac-cd2201f85c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xb2fb543a091610bcc4616-188ecad747"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/68",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/69",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/70"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-apogeegit-apogee-mcp-507a63faa9",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-04T05:52:04+00:00"
       }
     }
   ]
