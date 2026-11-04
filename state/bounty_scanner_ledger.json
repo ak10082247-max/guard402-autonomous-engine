@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-04T05:52:04+00:00",
+  "updated_at": "2026-11-04T14:13:14+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1457,6 +1457,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-04T05:52:03+00:00"
+    },
+    "github:laaielichter/reverseport": {
+      "audit_id": "audit-github-laaielichter-reversep-326944ef13",
+      "target_name": "laaielichter/Reverseport",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/laaielichter/Reverseport",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-laaielichter-reversep-326944ef13",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/72",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T14:13:00+00:00"
+    },
+    "github:caelo-cms/caelo-cms": {
+      "audit_id": "audit-github-caelo-cms-caelo-cms-a97505bd92",
+      "target_name": "caelo-cms/caelo-cms",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/caelo-cms/caelo-cms",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-caelo-cms-caelo-cms-a97505bd92",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/73",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T14:13:05+00:00"
+    },
+    "github:cocoonstack/sandbox": {
+      "audit_id": "audit-github-cocoonstack-sandbox-fe66b01914",
+      "target_name": "cocoonstack/sandbox",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/cocoonstack/sandbox",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cocoonstack-sandbox-fe66b01914",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/74",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-04T14:13:09+00:00"
+    },
+    "base:0x2bdbea8653894b4de9c0d2d8da92be6913170485": {
+      "audit_id": "audit-base-0x2bdbea8653894b4de9c0d-41f409009d",
+      "target_name": "PancakePair (0x2Bdbea86...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x2Bdbea8653894B4De9c0D2D8dA92Be6913170485#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2bdbea8653894b4de9c0d-41f409009d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-04T14:13:10+00:00"
+    },
+    "base:0x2ff88417a6fec16a57cd633120035b79c6df83ae": {
+      "audit_id": "audit-base-0x2ff88417a6fec16a57cd6-7339bf3b9d",
+      "target_name": "SafeProxy (0x2fF88417...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x2fF88417a6fec16a57Cd633120035b79C6df83AE#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2ff88417a6fec16a57cd6-7339bf3b9d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-04T14:13:13+00:00"
     }
   },
   "daily_email_counts": {
@@ -1468,7 +1533,7 @@
     "2026-11-01": 12,
     "2026-11-02": 8,
     "2026-11-03": 8,
-    "2026-11-04": 4
+    "2026-11-04": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2199,6 +2264,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-apogeegit-apogee-mcp-507a63faa9",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-04T05:52:04+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-04T14:13:14+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-laaielichter-reversep-326944ef13",
+        "audit-github-caelo-cms-caelo-cms-a97505bd92",
+        "audit-github-cocoonstack-sandbox-fe66b01914",
+        "audit-base-0x2bdbea8653894b4de9c0d-41f409009d",
+        "audit-base-0x2ff88417a6fec16a57cd6-7339bf3b9d"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-laaielichter-reversep-326944ef13",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-caelo-cms-caelo-cms-a97505bd92",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cocoonstack-sandbox-fe66b01914",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2bdbea8653894b4de9c0d-41f409009d",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x2ff88417a6fec16a57cd6-7339bf3b9d"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/72",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/73",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/74"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-laaielichter-reversep-326944ef13",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-04T14:13:14+00:00"
       }
     }
   ]
