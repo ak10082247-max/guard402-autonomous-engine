@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-04T23:30:04+00:00",
+  "updated_at": "2026-11-05T06:13:41+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1587,6 +1587,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-04T23:30:03+00:00"
+    },
+    "github:jinzcdev/leetcode-mcp-server": {
+      "audit_id": "audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
+      "target_name": "jinzcdev/leetcode-mcp-server",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/jinzcdev/leetcode-mcp-server",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/78",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T06:13:11+00:00"
+    },
+    "github:gstdcoin/a2a": {
+      "audit_id": "audit-github-gstdcoin-a2a-82572fb8c4",
+      "target_name": "gstdcoin/A2A",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/gstdcoin/A2A",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-gstdcoin-a2a-82572fb8c4",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/79",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T06:13:28+00:00"
+    },
+    "github:skulitom/pixelbolt": {
+      "audit_id": "audit-github-skulitom-pixelbolt-d2be3af3c0",
+      "target_name": "skulitom/Pixelbolt",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/skulitom/Pixelbolt",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-skulitom-pixelbolt-d2be3af3c0",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/80",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T06:13:37+00:00"
+    },
+    "base:0x8443dbfd863e7d9bf9eabf61b0f3be2eb56b7e88": {
+      "audit_id": "audit-base-0x8443dbfd863e7d9bf9eab-0195a801b7",
+      "target_name": "MerkleDistributor (0x8443DBfD...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x8443DBfD863E7D9BF9eabf61b0F3be2EB56B7E88#code",
+      "score": 85,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x8443dbfd863e7d9bf9eab-0195a801b7",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-05T06:13:39+00:00"
+    },
+    "base:0x5ea05f3673fdec2697c4e146fdc69eb5a68564ea": {
+      "audit_id": "audit-base-0x5ea05f3673fdec2697c4e-fe749e4a9c",
+      "target_name": "SafeProxy (0x5EA05F36...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x5EA05F3673fDEc2697c4e146FDC69eB5A68564EA#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5ea05f3673fdec2697c4e-fe749e4a9c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-05T06:13:40+00:00"
     }
   },
   "daily_email_counts": {
@@ -1598,7 +1663,8 @@
     "2026-11-01": 12,
     "2026-11-02": 8,
     "2026-11-03": 8,
-    "2026-11-04": 12
+    "2026-11-04": 12,
+    "2026-11-05": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2395,6 +2461,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-joshuaswarren-remnic-ad8619fd55",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-04T23:30:04+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-05T06:13:41+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
+        "audit-github-gstdcoin-a2a-82572fb8c4",
+        "audit-github-skulitom-pixelbolt-d2be3af3c0",
+        "audit-base-0x8443dbfd863e7d9bf9eab-0195a801b7",
+        "audit-base-0x5ea05f3673fdec2697c4e-fe749e4a9c"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-gstdcoin-a2a-82572fb8c4",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-skulitom-pixelbolt-d2be3af3c0",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x8443dbfd863e7d9bf9eab-0195a801b7",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x5ea05f3673fdec2697c4e-fe749e4a9c"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/78",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/79",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/80"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-05T06:13:41+00:00"
       }
     }
   ]
