@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-05T06:13:41+00:00",
+  "updated_at": "2026-11-05T19:48:24+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1652,6 +1652,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-05T06:13:40+00:00"
+    },
+    "github:cotletdev/tradify-api-mcp-server": {
+      "audit_id": "audit-github-cotletdev-tradify-api-753614704c",
+      "target_name": "cotletdev/tradify-api-mcp-server",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/cotletdev/tradify-api-mcp-server",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-tradify-api-753614704c",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/81",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T19:48:09+00:00"
+    },
+    "github:cotletdev/substack-api-mcp-server": {
+      "audit_id": "audit-github-cotletdev-substack-ap-500c8a8dec",
+      "target_name": "cotletdev/substack-api-mcp-server",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/cotletdev/substack-api-mcp-server",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-substack-ap-500c8a8dec",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/82",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T19:48:16+00:00"
+    },
+    "github:cotletdev/soundcloud-api-mcp-server": {
+      "audit_id": "audit-github-cotletdev-soundcloud--90402c7f61",
+      "target_name": "cotletdev/soundcloud-api-mcp-server",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/cotletdev/soundcloud-api-mcp-server",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-soundcloud--90402c7f61",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/83",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-05T19:48:19+00:00"
+    },
+    "base:0xd65041093b28fae6640a0d91c77bfa1efa6dcccc": {
+      "audit_id": "audit-base-0xd65041093b28fae6640a0-b950db9e20",
+      "target_name": "TaxLaunchToken (0xd6504109...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xd65041093B28fAe6640a0d91c77BFA1EfA6dCCcc#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd65041093b28fae6640a0-b950db9e20",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-05T19:48:21+00:00"
+    },
+    "base:0xd73a5665427cc20a1b51fe2bcfb273250237cccc": {
+      "audit_id": "audit-base-0xd73a5665427cc20a1b51f-11f786e9ee",
+      "target_name": "TaxLaunchToken (0xD73A5665...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xD73A5665427cC20A1B51FE2BCfB273250237cCcC#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd73a5665427cc20a1b51f-11f786e9ee",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-05T19:48:24+00:00"
     }
   },
   "daily_email_counts": {
@@ -1664,7 +1729,7 @@
     "2026-11-02": 8,
     "2026-11-03": 8,
     "2026-11-04": 12,
-    "2026-11-05": 4
+    "2026-11-05": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2494,6 +2559,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-jinzcdev-leetcode-mcp-b026d8aa6f",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-05T06:13:41+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-05T19:48:24+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-cotletdev-tradify-api-753614704c",
+        "audit-github-cotletdev-substack-ap-500c8a8dec",
+        "audit-github-cotletdev-soundcloud--90402c7f61",
+        "audit-base-0xd65041093b28fae6640a0-b950db9e20",
+        "audit-base-0xd73a5665427cc20a1b51f-11f786e9ee"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-tradify-api-753614704c",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-substack-ap-500c8a8dec",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-cotletdev-soundcloud--90402c7f61",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd65041093b28fae6640a0-b950db9e20",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd73a5665427cc20a1b51f-11f786e9ee"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/81",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/82",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/83"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-cotletdev-tradify-api-753614704c",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-05T19:48:24+00:00"
       }
     }
   ]
