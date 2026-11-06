@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-06T06:06:43+00:00",
+  "updated_at": "2026-11-06T19:13:20+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1782,6 +1782,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-06T06:06:43+00:00"
+    },
+    "github:abgeo/georgia-mcp": {
+      "audit_id": "audit-github-abgeo-georgia-mcp-b31b418a24",
+      "target_name": "ABGEO/georgia-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/ABGEO/georgia-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-abgeo-georgia-mcp-b31b418a24",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/87",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-06T19:13:02+00:00"
+    },
+    "github:jinsim/f1verse": {
+      "audit_id": "audit-github-jinsim-f1verse-a43b821e6b",
+      "target_name": "jinsim/f1verse",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/jinsim/f1verse",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-jinsim-f1verse-a43b821e6b",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/88",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-06T19:13:08+00:00"
+    },
+    "github:koala73/worldmonitor": {
+      "audit_id": "audit-github-koala73-worldmonitor-225daf7327",
+      "target_name": "koala73/worldmonitor",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/koala73/worldmonitor",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-koala73-worldmonitor-225daf7327",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/89",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-06T19:13:13+00:00"
+    },
+    "base:0xca1e630363f8d20da1d919fb7a56ffad063e7242": {
+      "audit_id": "audit-base-0xca1e630363f8d20da1d91-75dea8d497",
+      "target_name": "TemptationToken (0xcA1e6303...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xcA1e630363F8d20dA1d919fb7A56fFAD063E7242#code",
+      "score": 65,
+      "grade": "D",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xca1e630363f8d20da1d91-75dea8d497",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-06T19:13:16+00:00"
+    },
+    "base:0xd57323bbe92a3653b4fd828240e68944575b58f0": {
+      "audit_id": "audit-base-0xd57323bbe92a3653b4fd8-381021d247",
+      "target_name": "ERC1967Proxy (0xd57323BB...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xd57323BBE92A3653B4fd828240E68944575b58F0#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd57323bbe92a3653b4fd8-381021d247",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-06T19:13:17+00:00"
     }
   },
   "daily_email_counts": {
@@ -1795,7 +1860,7 @@
     "2026-11-03": 8,
     "2026-11-04": 12,
     "2026-11-05": 8,
-    "2026-11-06": 4
+    "2026-11-06": 8
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2691,6 +2756,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-everloot-everloot-1a20b45601",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-06T06:06:43+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-06T19:13:20+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-abgeo-georgia-mcp-b31b418a24",
+        "audit-github-jinsim-f1verse-a43b821e6b",
+        "audit-github-koala73-worldmonitor-225daf7327",
+        "audit-base-0xca1e630363f8d20da1d91-75dea8d497",
+        "audit-base-0xd57323bbe92a3653b4fd8-381021d247"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-abgeo-georgia-mcp-b31b418a24",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-jinsim-f1verse-a43b821e6b",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-koala73-worldmonitor-225daf7327",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xca1e630363f8d20da1d91-75dea8d497",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xd57323bbe92a3653b4fd8-381021d247"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/87",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/88",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/89"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-abgeo-georgia-mcp-b31b418a24",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-06T19:13:20+00:00"
       }
     }
   ]
