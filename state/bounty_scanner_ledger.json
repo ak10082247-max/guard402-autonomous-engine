@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-06T19:13:20+00:00",
+  "updated_at": "2026-11-07T05:37:44+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -1847,6 +1847,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-06T19:13:17+00:00"
+    },
+    "github:desplega-ai/agent-swarm": {
+      "audit_id": "audit-github-desplega-ai-agent-swa-9f59f9bb47",
+      "target_name": "desplega-ai/agent-swarm",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/desplega-ai/agent-swarm",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-desplega-ai-agent-swa-9f59f9bb47",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/90",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-07T05:37:29+00:00"
+    },
+    "github:drexthealpha/knos": {
+      "audit_id": "audit-github-drexthealpha-knos-4e360b081f",
+      "target_name": "drexthealpha/Knos",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/drexthealpha/Knos",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-drexthealpha-knos-4e360b081f",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/91",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-07T05:37:36+00:00"
+    },
+    "github:zuna107/figcraft-mcp": {
+      "audit_id": "audit-github-zuna107-figcraft-mcp-2a31da4a37",
+      "target_name": "zuna107/figcraft-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/zuna107/figcraft-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-zuna107-figcraft-mcp-2a31da4a37",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/92",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-07T05:37:39+00:00"
+    },
+    "base:0x3377d31f8b14471cdb769683c11506574f17af1f": {
+      "audit_id": "audit-base-0x3377d31f8b14471cdb769-f2c5254f68",
+      "target_name": "BeaconProxy (0x3377D31f...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x3377D31f8B14471CDb769683C11506574f17aF1f#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x3377d31f8b14471cdb769-f2c5254f68",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-07T05:37:41+00:00"
+    },
+    "base:0xfe75d2d083a013cc779067d051d1efc7c58d3178": {
+      "audit_id": "audit-base-0xfe75d2d083a013cc77906-5d65005fd4",
+      "target_name": "BeaconProxy (0xfe75d2d0...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xfe75d2d083A013CC779067d051D1efc7c58D3178#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xfe75d2d083a013cc77906-5d65005fd4",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-07T05:37:43+00:00"
     }
   },
   "daily_email_counts": {
@@ -1860,7 +1925,8 @@
     "2026-11-03": 8,
     "2026-11-04": 12,
     "2026-11-05": 8,
-    "2026-11-06": 8
+    "2026-11-06": 8,
+    "2026-11-07": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -2789,6 +2855,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-abgeo-georgia-mcp-b31b418a24",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-06T19:13:20+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-07T05:37:44+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-desplega-ai-agent-swa-9f59f9bb47",
+        "audit-github-drexthealpha-knos-4e360b081f",
+        "audit-github-zuna107-figcraft-mcp-2a31da4a37",
+        "audit-base-0x3377d31f8b14471cdb769-f2c5254f68",
+        "audit-base-0xfe75d2d083a013cc77906-5d65005fd4"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-desplega-ai-agent-swa-9f59f9bb47",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-drexthealpha-knos-4e360b081f",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-zuna107-figcraft-mcp-2a31da4a37",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x3377d31f8b14471cdb769-f2c5254f68",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xfe75d2d083a013cc77906-5d65005fd4"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/90",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/91",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/92"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-desplega-ai-agent-swa-9f59f9bb47",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-07T05:37:44+00:00"
       }
     }
   ]
