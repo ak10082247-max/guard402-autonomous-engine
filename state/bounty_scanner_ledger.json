@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-07T21:41:05+00:00",
+  "updated_at": "2026-11-08T05:39:32+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -2042,6 +2042,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-07T21:41:04+00:00"
+    },
+    "github:azmartone67/dchub-mcp-server": {
+      "audit_id": "audit-github-azmartone67-dchub-mcp-fa6bd794f9",
+      "target_name": "azmartone67/dchub-mcp-server",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/azmartone67/dchub-mcp-server",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-azmartone67-dchub-mcp-fa6bd794f9",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/99",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T05:39:18+00:00"
+    },
+    "github:apravint/iram-os": {
+      "audit_id": "audit-github-apravint-iram-os-5d765ab306",
+      "target_name": "apravint/iram-os",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/apravint/iram-os",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apravint-iram-os-5d765ab306",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/100",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T05:39:24+00:00"
+    },
+    "github:spawnpoint-inc/spawnpoint-plugin": {
+      "audit_id": "audit-github-spawnpoint-inc-spawnp-bd0ff352ea",
+      "target_name": "spawnpoint-inc/spawnpoint-plugin",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/spawnpoint-inc/spawnpoint-plugin",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-spawnpoint-inc-spawnp-bd0ff352ea",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/101",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T05:39:28+00:00"
+    },
+    "base:0x558f07c1f321547ebcb23788933878c8a6055426": {
+      "audit_id": "audit-base-0x558f07c1f321547ebcb23-d7bdde1998",
+      "target_name": "ERC1967Proxy (0x558f07c1...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x558f07c1F321547eBCB23788933878c8a6055426#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x558f07c1f321547ebcb23-d7bdde1998",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-08T05:39:30+00:00"
+    },
+    "base:0x7846e77ca3f4367b2a7c58d676e5d284fb68bee6": {
+      "audit_id": "audit-base-0x7846e77ca3f4367b2a7c5-89e951f95c",
+      "target_name": "ERC1967Proxy (0x7846E77c...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x7846E77ca3F4367B2a7c58D676e5D284fb68beE6#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x7846e77ca3f4367b2a7c5-89e951f95c",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-08T05:39:32+00:00"
     }
   },
   "daily_email_counts": {
@@ -2056,7 +2121,8 @@
     "2026-11-04": 12,
     "2026-11-05": 8,
     "2026-11-06": 8,
-    "2026-11-07": 12
+    "2026-11-07": 12,
+    "2026-11-08": 4
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -3084,6 +3150,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-wirecatlabs-wirecat-d-f5de43e266",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-07T21:41:05+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-08T05:39:32+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-azmartone67-dchub-mcp-fa6bd794f9",
+        "audit-github-apravint-iram-os-5d765ab306",
+        "audit-github-spawnpoint-inc-spawnp-bd0ff352ea",
+        "audit-base-0x558f07c1f321547ebcb23-d7bdde1998",
+        "audit-base-0x7846e77ca3f4367b2a7c5-89e951f95c"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-azmartone67-dchub-mcp-fa6bd794f9",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-apravint-iram-os-5d765ab306",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-spawnpoint-inc-spawnp-bd0ff352ea",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x558f07c1f321547ebcb23-d7bdde1998",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x7846e77ca3f4367b2a7c5-89e951f95c"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/99",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/100",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/101"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-azmartone67-dchub-mcp-fa6bd794f9",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-08T05:39:32+00:00"
       }
     }
   ]
