@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "updated_at": "2026-11-08T13:08:43+00:00",
+  "updated_at": "2026-11-08T21:55:27+00:00",
   "scanned_targets": {
     "github:frumu-ai/tandem": {
       "audit_id": "audit-github-frumu-ai-tandem-3d7713c94c",
@@ -2172,6 +2172,71 @@
       "github_issue_url": null,
       "smtp_sent": false,
       "scanned_at": "2026-11-08T13:08:42+00:00"
+    },
+    "github:sysevol-ai/codenib": {
+      "audit_id": "audit-github-sysevol-ai-codenib-19e6268546",
+      "target_name": "sysevol-ai/CodeNib",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/sysevol-ai/CodeNib",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-sysevol-ai-codenib-19e6268546",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/105",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T21:55:12+00:00"
+    },
+    "github:sleepunit-agents/loom": {
+      "audit_id": "audit-github-sleepunit-agents-loom-72d6659b03",
+      "target_name": "sleepunit-agents/loom",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/sleepunit-agents/loom",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-sleepunit-agents-loom-72d6659b03",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/106",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T21:55:18+00:00"
+    },
+    "github:g33ks/foundryvtt-mcp": {
+      "audit_id": "audit-github-g33ks-foundryvtt-mcp-ecf54f0ac4",
+      "target_name": "G33ks/foundryvtt-mcp",
+      "target_type": "mcp_repo",
+      "target_url": "https://github.com/G33ks/foundryvtt-mcp",
+      "score": 46,
+      "grade": "F",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-g33ks-foundryvtt-mcp-ecf54f0ac4",
+      "vault_registered_remotely": false,
+      "github_issue_url": "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/107",
+      "smtp_sent": true,
+      "scanned_at": "2026-11-08T21:55:22+00:00"
+    },
+    "base:0x6499d8d8c2243661c1fb7ec99ed9020481ef1531": {
+      "audit_id": "audit-base-0x6499d8d8c2243661c1fb7-d9322e5766",
+      "target_name": "UniswapV2Pair (0x6499d8d8...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0x6499d8d8C2243661C1fB7Ec99ED9020481ef1531#code",
+      "score": 80,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x6499d8d8c2243661c1fb7-d9322e5766",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-08T21:55:24+00:00"
+    },
+    "base:0xc3f5af096cd9f3ef4b1290aaac07cb864df12248": {
+      "audit_id": "audit-base-0xc3f5af096cd9f3ef4b129-6e4e8e0f6d",
+      "target_name": "SafeProxy (0xC3F5Af09...)",
+      "target_type": "base_contract",
+      "target_url": "https://basescan.org/address/0xC3F5Af096cD9f3Ef4b1290AAac07CB864dF12248#code",
+      "score": 84,
+      "grade": "B",
+      "unlock_url": "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xc3f5af096cd9f3ef4b129-6e4e8e0f6d",
+      "vault_registered_remotely": false,
+      "github_issue_url": null,
+      "smtp_sent": false,
+      "scanned_at": "2026-11-08T21:55:26+00:00"
     }
   },
   "daily_email_counts": {
@@ -2187,7 +2252,7 @@
     "2026-11-05": 8,
     "2026-11-06": 8,
     "2026-11-07": 12,
-    "2026-11-08": 8
+    "2026-11-08": 12
   },
   "unsubscribed_emails": [],
   "runs": [
@@ -3281,6 +3346,39 @@
         "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-arthjean-rust-doctor-8e528ff838",
         "smtp_host": "smtp.gmail.com:587",
         "timestamp": "2026-11-08T13:08:43+00:00"
+      }
+    },
+    {
+      "run_at": "2026-11-08T21:55:27+00:00",
+      "gateway_url": "https://guard402-autonomous-engine.onrender.com",
+      "mcp_discovered": 3,
+      "base_contracts_discovered": 2,
+      "audits_generated": 5,
+      "audit_ids": [
+        "audit-github-sysevol-ai-codenib-19e6268546",
+        "audit-github-sleepunit-agents-loom-72d6659b03",
+        "audit-github-g33ks-foundryvtt-mcp-ecf54f0ac4",
+        "audit-base-0x6499d8d8c2243661c1fb7-d9322e5766",
+        "audit-base-0xc3f5af096cd9f3ef4b129-6e4e8e0f6d"
+      ],
+      "unlock_urls": [
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-sysevol-ai-codenib-19e6268546",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-sleepunit-agents-loom-72d6659b03",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-github-g33ks-foundryvtt-mcp-ecf54f0ac4",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0x6499d8d8c2243661c1fb7-d9322e5766",
+        "https://guard402-autonomous-engine.onrender.com/v1/unlock-patch/audit-base-0xc3f5af096cd9f3ef4b129-6e4e8e0f6d"
+      ],
+      "issues_created": [
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/105",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/106",
+        "https://github.com/ak10082247-max/guard402-autonomous-engine/issues/107"
+      ],
+      "live_proof_email": {
+        "sent": true,
+        "recipient": "armkhan18@gmail.com",
+        "subject": "[Guard402 Live Proof] 5 Static Audits Vaulted \u2014 Sample: audit-github-sysevol-ai-codenib-19e6268546",
+        "smtp_host": "smtp.gmail.com:587",
+        "timestamp": "2026-11-08T21:55:27+00:00"
       }
     }
   ]
