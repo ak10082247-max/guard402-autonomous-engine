@@ -1468,47 +1468,13 @@ def send_smtp_email(
     body_text: str,
     unsubscribe_url: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Send plain-text email via `smtp.gmail.com:587` with STARTTLS using `SMTP_USER` and `SMTP_PASS`."""
-    if not SMTP_USER or not SMTP_PASS:
-        return {
-            "sent": False,
-            "reason": "SMTP_USER or SMTP_PASS not set in environment",
-            "recipient": recipient_email,
-        }
-
-    msg = EmailMessage()
-    msg["From"] = f"Guard402 Autonomous Scanner <{SMTP_USER}>"
-    msg["To"] = recipient_email
-    msg["Subject"] = subject
-    msg["Date"] = email.utils.formatdate(localtime=False)
-    msg["Message-ID"] = email.utils.make_msgid(domain="guard402.autonomous")
-    if unsubscribe_url:
-        msg["List-Unsubscribe"] = f"<{unsubscribe_url}>"
-        msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
-    msg.set_content(body_text)
-
-    try:
-        context = ssl.create_default_context()
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
-            server.ehlo()
-            server.starttls(context=context)
-            server.ehlo()
-            server.login(SMTP_USER, SMTP_PASS)
-            server.send_message(msg)
-        return {
-            "sent": True,
-            "recipient": recipient_email,
-            "subject": subject,
-            "smtp_host": f"{SMTP_HOST}:{SMTP_PORT}",
-            "timestamp": utc_now_iso(),
-        }
-    except Exception as exc:
-        return {
-            "sent": False,
-            "recipient": recipient_email,
-            "error": str(exc),
-            "timestamp": utc_now_iso(),
-        }
+    print(f"[guard402] BLOCKED: Outbound email to {recipient_email} rejected. Guard402 is permanently shut down by operator.")
+    return {
+        "sent": False,
+        "recipient": recipient_email,
+        "error": "DISABLED_BY_OPERATOR",
+        "timestamp": utc_now_iso(),
+    }
 
 
 def open_github_compliance_issue(
@@ -1572,6 +1538,8 @@ def open_github_compliance_issue(
 # ---------------------------------------------------------------------------
 
 def run_scanner(args: argparse.Namespace) -> Dict[str, Any]:
+    print("[Guard402 Scanner] SHUT DOWN: Guard402 Autonomous Scanner is permanently disabled by operator.")
+    return {"status": "disabled", "message": "Permanently disabled by operator."}
     ledger = load_ledger()
     today_key = today_utc_str()
     emails_sent_today = int(ledger["daily_email_counts"].get(today_key, 0))
